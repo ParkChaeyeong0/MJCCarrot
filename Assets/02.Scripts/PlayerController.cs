@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    //Add Componant Rigidbody
     Rigidbody rb;
     public float speed;
 
