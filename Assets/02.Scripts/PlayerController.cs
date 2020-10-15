@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public static PlayerController Instance;
+    //public static PlayerController Instance;
     
     //Add Componant Rigidbody 해주기.
     Rigidbody rb;
