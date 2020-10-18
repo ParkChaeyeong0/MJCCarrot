@@ -4,24 +4,35 @@ using UnityEngine;
 
 public class PlyerMove : MonoBehaviour
 {
-    public float moveSpeed;
-    Transform tr;
-    void Start()
-    {
-        tr = GetComponent<Transform>();
+    public float Speed = 0.25f;
+    private Vector2 nowPos, prePos;
+    private Vector3 movePos;
+
+
+    void Start() {
+
+
     }
 
-   
     void Update()
     {
-        if (Input.GetKey("left"))
+       
+        if (Input.touchCount == 1)
         {
-            tr.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-        }
-
-        if (Input.GetKey("right"))
-        {
-            tr.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-        }
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                prePos = touch.position - touch.deltaPosition;
+            }
+            else if (touch.phase == TouchPhase.Moved)
+            {
+                nowPos = touch.position - touch.deltaPosition;
+                movePos = (Vector3)(prePos - nowPos) * Time.deltaTime * Speed;
+                movePos.y = 0;
+                movePos.z = 0;
+                gameObject.transform.Translate(movePos);
+                prePos = touch.position - touch.deltaPosition;
+            }
+        } //플레이어 x축 드래그터치 이동
     }
 }
