@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlyerMove : MonoBehaviour
 {
@@ -9,8 +10,14 @@ public class PlyerMove : MonoBehaviour
     private Vector3 movePos;
     GameOver isOver;
 
+    public Text Score;
+    int count = 0;
+
     void Start() {
         isOver = GameObject.Find("Player").GetComponent<GameOver>();
+
+        Score.text = "Score: " + count;
+                                //count.ToString();
 
     }
 
@@ -42,5 +49,16 @@ public class PlyerMove : MonoBehaviour
                 prePos = touch.position - touch.deltaPosition;
             }
         } //플레이어 x축 드래그터치 이동
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            other.gameObject.SetActive(false);
+            count = count + 1;
+            Score.text = "Score: " + count;
+                                    //count.ToString();
+        }
     }
 }

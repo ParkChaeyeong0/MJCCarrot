@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
     //public static PlayerController Instance;
     
     //Add Componant Rigidbody 해주기.
-    Rigidbody rb;
-    public float speed;
+    //Rigidbody rb;
+    //public float speed;
 
     int count = 0;
 
@@ -17,19 +17,19 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         Score.text = "Score: " + count;
                                 //count.ToString();
     }
 
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        //float moveHorizontal = Input.GetAxis("Horizontal");
+        //float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
+        //Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
 
-        rb.AddForce(movement * speed);
+        //rb.AddForce(movement * speed);
     }
 
     private void OnTriggerEnter(Collider other)
