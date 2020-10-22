@@ -6,15 +6,24 @@ public class MapMove : MonoBehaviour
 {
     public float moveSpeed;
     Transform tr;
-
+    GameOver isOver;
     void Start()
     {
         tr = GetComponent<Transform>();
+        isOver = GameObject.Find("Player").GetComponent<GameOver>();
     }
 
   
     void Update()
     {
-        tr.Translate(Vector3.back * moveSpeed * Time.deltaTime);
+        if (!isOver.isEnter)
+        {
+            Move();
+        }
+       
     }
+    void Move()
+    {
+        tr.Translate(Vector3.back * moveSpeed * Time.deltaTime);
+    } // 맵이동
 }

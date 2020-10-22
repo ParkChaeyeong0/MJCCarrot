@@ -7,16 +7,24 @@ public class PlyerMove : MonoBehaviour
     public float Speed = 0.25f;
     private Vector2 nowPos, prePos;
     private Vector3 movePos;
-
+    GameOver isOver;
 
     void Start() {
-
+        isOver = GameObject.Find("Player").GetComponent<GameOver>();
 
     }
 
     void Update()
     {
-       
+        if (!isOver.isEnter)
+        {
+            move();
+        }
+        
+
+    }
+    void move()
+    {
         if (Input.touchCount == 1)
         {
             Touch touch = Input.GetTouch(0);
