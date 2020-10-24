@@ -5,20 +5,22 @@ using UnityEngine.UI;
 
 public class PlyerMove : MonoBehaviour
 {
+    // 좌우 이동 속도
     public float Speed = 0.25f;
+
     private Vector2 nowPos, prePos;
     private Vector3 movePos;
-    GameOver isOver;
+
+    private int score = 0;
 
     public Text Score;
-    int count = 0;
 
-    void Start() {
+    GameOver isOver;
+
+    void Start()
+    {
         isOver = GameObject.Find("Player").GetComponent<GameOver>();
-
-        Score.text = "Score: " + count;
-                                //count.ToString();
-
+        Score.text = "Score : " + score;
     }
 
     void Update()
@@ -27,9 +29,9 @@ public class PlyerMove : MonoBehaviour
         {
             move();
         }
-        
-
     }
+
+    // 플레이어 x축 드래그 터치 이동
     void move()
     {
         if (Input.touchCount == 1)
@@ -48,17 +50,22 @@ public class PlyerMove : MonoBehaviour
                 gameObject.transform.Translate(movePos);
                 prePos = touch.position - touch.deltaPosition;
             }
-        } //플레이어 x축 드래그터치 이동
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        // 만약 코인이 닿으면
         if (other.gameObject.CompareTag("Coin"))
         {
+            //GmaeMaanger에서 Coin 클래스 가져옴.
+            //GameManager.Instance.Coin();
+
             other.gameObject.SetActive(false);
-            count = count + 1;
-            Score.text = "Score: " + count;
-                                    //count.ToString();
+
+
+            score = score + 1;
+            Score.text = "Score : " + score;
         }
     }
 }

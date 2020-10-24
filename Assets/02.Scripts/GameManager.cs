@@ -2,12 +2,101 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    //싱글톤패턴 사용을 위해 만듦. 다른 스크립트에서 클래스 불러오기 가능.
+    private static GameManager _instance;
+
+    public static GameManager Instance {
+        get {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<GameManager>();
+            }
+            return _instance;
+        }
+    }
+
     public GameObject settingImg;
 
+    private int score;
+
+    public bool isEnter = false;
+
+    [SerializeField]
+    private Text Score;
+
+    [SerializeField]
+    private Text LastEqualsScore;
+
+    /*public void GameStart()
+    {
+        score = 0;
+        Score.text = "Score : " + score;
+    }
+
+    // 코인 ++
+    public void Coin()
+    {
+        score = score + 1;
+        Score.text = "Score : " + score;
+    }*/
+
+    //코인 갯수 업데이트
+    
+    /*
+    public void GameOver()
+    {
+
+        if (count <= PlayerPrefs.GetInt("GetCoin", 0)) // 얻은 코인의 key 값을 가져온다.
+        {
+            PlayerPrefs.SetInt("GetCoin", count); // 얻은 코인에 대한 key 값에 count를 저장.
+        }
+        Debug.Log(PlayerPrefs.GetInt("GetCoin", 0));
+    }*/
+
+    // 씬 이동
+    public void OnClick_Start()
+    {
+        SceneManager.LoadScene("PlayScene");
+    }
+
+    public void OnClick_Skins()
+    {
+        SceneManager.LoadScene("SkinScene");
+    }
+
+    public void OnClick_SkinsClose()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
+    // 플레이 씬에서 사용
+    public void ChangePlayScene()
+    {
+        SceneManager.LoadScene("PlayScene");
+    }
+
+    public void ChangeMainScene()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
+    // 설정 창 띄우고 닫는 버튼
+    public void OnClick_SettingButton()
+    {
+        settingImg.SetActive(true);
+    }
+
+    public void OnClick_SettingButtonClose()
+    {
+        settingImg.SetActive(false);
+    }
+
+    // 화면 비율 고정
     public void setupCamera()
     {
         //가로 화면 비율
@@ -43,32 +132,5 @@ public class GameManager : MonoBehaviour
             mainCamera.rect.y + Math.Abs(heightadd),
             mainCamera.rect.width + (widthtadd * 2),
             mainCamera.rect.height + (heightadd * 2));
-    }
-
-    // 씬 이동
-    public void OnClick_Start()
-    {
-        SceneManager.LoadScene("PlayScene");
-    }
-
-    public void OnClick_Skins()
-    {
-        SceneManager.LoadScene("SkinScene");
-    }
-
-    public void OnClick_SkinsClose()
-    {
-        SceneManager.LoadScene("MainScene");
-    }
-
-    // 설정 창 띄우고 닫는 버튼
-    public void OnClick_SettingButton()
-    {
-        settingImg.SetActive(true);
-    }
-
-    public void OnClick_SettingButtonClose()
-    {
-        settingImg.SetActive(false);
     }
 }

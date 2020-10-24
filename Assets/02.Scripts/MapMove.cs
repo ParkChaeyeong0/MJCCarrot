@@ -5,8 +5,10 @@ using UnityEngine;
 public class MapMove : MonoBehaviour
 {
     public float moveSpeed;
+
     Transform tr;
     GameOver isOver;
+    
     void Start()
     {
         tr = GetComponent<Transform>();
@@ -22,8 +24,10 @@ public class MapMove : MonoBehaviour
         }
        
     }
+
+    // 맵 이동
     void Move()
     {
         tr.Translate(Vector3.back * moveSpeed * Time.deltaTime);
-    } // 맵이동
+    } 
 }
