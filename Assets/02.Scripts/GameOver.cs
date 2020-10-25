@@ -6,18 +6,15 @@ using UnityEngine.UI;
 public class GameOver : MonoBehaviour
 {
     public Image gameOverImge;
+
     public bool isEnter = false;
+
     void Start()
     {
         gameOverImge.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // 장애물 닿으면 멈추고 게임오버창
     private void OnTriggerEnter(Collider col)
     {
       
@@ -26,5 +23,5 @@ public class GameOver : MonoBehaviour
             gameOverImge.gameObject.SetActive(true);
             isEnter = true;
         }
-    } // 장애물 닿으면 멈추고 게임오버창
+    }
 }

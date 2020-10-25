@@ -6,6 +6,7 @@ using UnityEngine.Analytics;
 public class MapMove : MonoBehaviour
 {
     public float moveSpeed;
+
     Transform tr;
     GameOver isOver;
     void Start()
@@ -23,8 +24,10 @@ public class MapMove : MonoBehaviour
         }
        
     }
+
+    // 맵이동
     void Move()
     {
         tr.Translate(Vector3.back * moveSpeed * Time.deltaTime);
-    } // 맵이동
+    }
 }

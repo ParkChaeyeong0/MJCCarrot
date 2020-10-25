@@ -2,14 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject settingImg;
 
-<<<<<<< Updated upstream
-=======
     //public Image gameOverImge;
 
     public bool isEnter = false;
@@ -73,7 +72,6 @@ public class GameManager : MonoBehaviour
     }
 
     // 화면 비율 고정
->>>>>>> Stashed changes
     public void setupCamera()
     {
         //가로 화면 비율
@@ -109,32 +107,5 @@ public class GameManager : MonoBehaviour
             mainCamera.rect.y + Math.Abs(heightadd),
             mainCamera.rect.width + (widthtadd * 2),
             mainCamera.rect.height + (heightadd * 2));
-    }
-
-    // 씬 이동
-    public void OnClick_Start()
-    {
-        SceneManager.LoadScene("PlayScene");
-    }
-
-    public void OnClick_Skins()
-    {
-        SceneManager.LoadScene("SkinScene");
-    }
-
-    public void OnClick_SkinsClose()
-    {
-        SceneManager.LoadScene("MainScene");
-    }
-
-    // 설정 창 띄우고 닫는 버튼
-    public void OnClick_SettingButton()
-    {
-        settingImg.SetActive(true);
-    }
-
-    public void OnClick_SettingButtonClose()
-    {
-        settingImg.SetActive(false);
     }
 }
