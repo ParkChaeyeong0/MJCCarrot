@@ -8,6 +8,72 @@ public class GameManager : MonoBehaviour
 {
     public GameObject settingImg;
 
+<<<<<<< Updated upstream
+=======
+    //public Image gameOverImge;
+
+    public bool isEnter = false;
+
+    [SerializeField]
+    private Text Score;
+
+    [SerializeField]
+    private Text LastEqualsScore;
+
+    void Start()
+    {
+        LastEqualsScore.text = "Score : " + Singleton.getInstance.getTotalCount();
+    }
+
+    // 인게임 코인 표시
+    public void viewScore()
+    {
+        Score.text = "Score : " + Singleton.getInstance.getCount();
+    }
+
+    // 씬 이동
+    public void OnClick_Start()
+    {
+        Singleton.getInstance.initCount();
+        SceneManager.LoadScene("PlayScene");
+    }
+
+    public void OnClick_Skins()
+    {
+        SceneManager.LoadScene("SkinScene");
+    }
+
+    public void OnClick_SkinsClose()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
+    // 플레이 씬에서 사용
+    public void ChangePlayScene()
+    {   
+        SceneManager.LoadScene("PlayScene");
+    }
+
+    public void ChangeMainScene()
+    {
+        int count = Singleton.getInstance.getCount();
+        Singleton.getInstance.sumTotalCount(count);
+        SceneManager.LoadScene("MainScene");
+    }
+
+    // 설정 창 띄우고 닫는 버튼
+    public void OnClick_SettingButton()
+    {
+        settingImg.SetActive(true);
+    }
+
+    public void OnClick_SettingButtonClose()
+    {
+        settingImg.SetActive(false);
+    }
+
+    // 화면 비율 고정
+>>>>>>> Stashed changes
     public void setupCamera()
     {
         //가로 화면 비율

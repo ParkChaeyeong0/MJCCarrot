@@ -8,17 +8,30 @@ public class PlyerMove : MonoBehaviour
     public float Speed = 0.25f;
     private Vector2 nowPos, prePos;
     private Vector3 movePos;
+<<<<<<< Updated upstream
     GameOver isOver;
+=======
+>>>>>>> Stashed changes
 
     public Text Score;
     int count = 0;
 
+<<<<<<< Updated upstream
     void Start() {
         isOver = GameObject.Find("Player").GetComponent<GameOver>();
 
         Score.text = "Score: " + count;
                                 //count.ToString();
 
+=======
+    GameOver isOver;
+    GameManager gameManager;
+
+    void Start()
+    {
+        isOver = GameObject.Find("Player").GetComponent<GameOver>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+>>>>>>> Stashed changes
     }
 
     void Update()
@@ -55,10 +68,20 @@ public class PlyerMove : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Coin"))
         {
+<<<<<<< Updated upstream
             other.gameObject.SetActive(false);
             count = count + 1;
             Score.text = "Score: " + count;
                                     //count.ToString();
+=======
+            //Singleton에서 increaseCount 클래스 가져옴.
+            Singleton.getInstance.increaseCount();
+
+            //GameManager에서 viewSore클래스 가져옴.
+            gameManager.viewScore();
+
+            other.gameObject.SetActive(false);
+>>>>>>> Stashed changes
         }
     }
 }
