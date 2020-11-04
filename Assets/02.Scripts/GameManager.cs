@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject settingImg;
+    public GameObject ItemDialogImg;
 
     //public Image gameOverImge;
 
@@ -58,6 +59,17 @@ public class GameManager : MonoBehaviour
         int count = Singleton.getInstance.getCount();
         Singleton.getInstance.sumTotalCount(count);
         SceneManager.LoadScene("MainScene");
+    }
+
+    // 아이템 창 띄우고 닫는 버튼
+    public void OnClick_ItemDialogOpen()
+    {
+        ItemDialogImg.SetActive(true);
+    }
+
+    public void OnClick_ItemDialogClose()
+    {
+        ItemDialogImg.SetActive(false);
     }
 
     // 설정 창 띄우고 닫는 버튼
