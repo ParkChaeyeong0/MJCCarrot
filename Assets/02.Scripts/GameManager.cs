@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject settingImg;
     public GameObject ItemDialogImg;
 
+
     //public Image gameOverImge;
 
     public bool isEnter = false;
@@ -50,9 +51,13 @@ public class GameManager : MonoBehaviour
 
     // 플레이 씬에서 사용
     public void ChangePlayScene()
-    {   
-        SceneManager.LoadScene("PlayScene");
+    {
+        //Restart 버튼 눌렀을 시 스코어 다시 카운트
+        Time.timeScale = 1f;
+        SceneManager.LoadSceneAsync("PlayScene");
+        OnClick_Start();
     }
+    
 
     public void ChangeMainScene()
     {
@@ -120,4 +125,8 @@ public class GameManager : MonoBehaviour
             mainCamera.rect.width + (widthtadd * 2),
             mainCamera.rect.height + (heightadd * 2));
     }
+}
+
+internal class GameScore
+{
 }
