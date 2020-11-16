@@ -23,13 +23,13 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        LastEqualsScore.text = "Score : " + Singleton.getInstance.getTotalCount();
+        LastEqualsScore.text = "" + Singleton.getInstance.getTotalCount();
     }
 
     // 인게임 코인 표시
     public void viewScore()
     {
-        Score.text = "Score : " + Singleton.getInstance.getCount();
+        Score.text = "" + Singleton.getInstance.getCount();
     }
 
     // 씬 이동
