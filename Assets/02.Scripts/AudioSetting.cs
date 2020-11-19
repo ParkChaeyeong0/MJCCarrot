@@ -14,9 +14,14 @@ public class AudioSetting : MonoBehaviour
 
     private void Start()
     {
+        DontDestroyOnLoad(transform.gameObject);
+
         backVol = PlayerPrefs.GetFloat("backvol", 1f);
         audioSlider.value = backVol;
         audio.volume = audioSlider.value;
+
+        //플레이어 캐릭터의 사망 이벤트 발생 시 사망 BGM 재생 메소드 실행
+        // += GameStart;
     }
 
     void Update()
@@ -30,5 +35,16 @@ public class AudioSetting : MonoBehaviour
 
         backVol = audioSlider.value;
         PlayerPrefs.SetFloat("backvol", backVol);
+    }
+
+    public void GameStart()
+    {
+        //기존 BGM 중지
+        audio.Stop();
+
+        audio.volume = 1f;
+
+        //PlayBGM 재생
+        audio.Play();
     }
 }
