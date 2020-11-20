@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour
     public GameObject settingImg;
     public GameObject ItemDialogImg;
 
+    public GameObject SettingButtonSound;
+    public GameObject StartButton;
+    public GameObject StartButtonSound;
+    public GameObject PlayButtonSound;
+    public GameObject SkinButtonSound;
 
     //public Image gameOverImge;
 
@@ -36,11 +41,25 @@ public class GameManager : MonoBehaviour
     public void OnClick_Start()
     {
         Singleton.getInstance.initCount();
+
+        AudioSource HomeBGM = StartButton.GetComponent<AudioSource>();
+        AudioSource EffectSound = StartButtonSound.GetComponent<AudioSource>();
+
+        HomeBGM.Stop();
+        EffectSound.Play();
+
         SceneManager.LoadScene("PlayScene");
+
     }
 
     public void OnClick_Skins()
     {
+        AudioSource HomeBGM = StartButton.GetComponent<AudioSource>();
+        AudioSource skinTouchSound = SkinButtonSound.GetComponent<AudioSource>();
+
+        skinTouchSound.Play();
+        HomeBGM.Stop();
+
         SceneManager.LoadScene("SkinScene");
     }
 
@@ -54,6 +73,10 @@ public class GameManager : MonoBehaviour
     {
         //Restart 버튼 눌렀을 시 스코어 다시 카운트
         Time.timeScale = 1f;
+
+        AudioSource RyPlayButtonSound = PlayButtonSound.GetComponent<AudioSource>();
+        RyPlayButtonSound.Play();
+
         SceneManager.LoadSceneAsync("PlayScene");
         OnClick_Start();
     }
@@ -63,12 +86,19 @@ public class GameManager : MonoBehaviour
     {
         int count = Singleton.getInstance.getCount();
         Singleton.getInstance.sumTotalCount(count);
+
+        AudioSource HomeButtonSound = StartButtonSound.GetComponent<AudioSource>();
+        HomeButtonSound.Play();
+
         SceneManager.LoadScene("MainScene");
     }
 
     // 아이템 창 띄우고 닫는 버튼
     public void OnClick_ItemDialogOpen()
     {
+        AudioSource playTouchSound = PlayButtonSound.GetComponent<AudioSource>();
+        playTouchSound.Play();
+
         ItemDialogImg.SetActive(true);
     }
 
@@ -80,6 +110,9 @@ public class GameManager : MonoBehaviour
     // 설정 창 띄우고 닫는 버튼
     public void OnClick_SettingButton()
     {
+        AudioSource SettingTouchSound = SettingButtonSound.GetComponent<AudioSource>();
+        SettingTouchSound.Play();
+
         settingImg.SetActive(true);
     }
 
