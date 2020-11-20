@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class AudioSetting : MonoBehaviour
 {
+    // 볼륨 조절
+
     //public AudioMixer masterMixer;
     public Slider audioSlider;
     public AudioSource audio;
@@ -27,6 +29,7 @@ public class AudioSetting : MonoBehaviour
     void Update()
     {
         SoundSlider();
+
     }
 
     public void SoundSlider()
@@ -37,14 +40,4 @@ public class AudioSetting : MonoBehaviour
         PlayerPrefs.SetFloat("backvol", backVol);
     }
 
-    public void GameStart()
-    {
-        //기존 BGM 중지
-        audio.Stop();
-
-        audio.volume = 1f;
-
-        //PlayBGM 재생
-        audio.Play();
-    }
 }
