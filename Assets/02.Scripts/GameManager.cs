@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject settingImg;
+    public GameObject producerImg;
     public GameObject ItemDialogImg;
 
     public GameObject SettingButtonSound;
@@ -119,6 +120,20 @@ public class GameManager : MonoBehaviour
     public void OnClick_SettingButtonClose()
     {
         settingImg.SetActive(false);
+    }
+
+    // 제작자 창 띄우고 닫는 버튼
+    public void OnClick_ProducerButton()
+    {
+        AudioSource producerTouchSound = SettingButtonSound.GetComponent<AudioSource>();
+        producerTouchSound.Play();
+
+        producerImg.SetActive(true);
+    }
+
+    public void OnClick_ProducerClose()
+    {
+        producerImg.SetActive(false);
     }
 
     // 화면 비율 고정

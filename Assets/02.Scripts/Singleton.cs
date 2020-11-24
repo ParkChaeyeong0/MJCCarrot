@@ -33,6 +33,9 @@ public class Singleton
     // 메인화면 총 점수
     private int totalCount = 0;
 
+    // 메인화면 최고기록
+    private int bestScore = 0;
+
     // 인게임 점수 가져오기
     public int getCount()
     {
@@ -61,5 +64,22 @@ public class Singleton
     {
         totalCount = totalCount + count;
     }
+
+    /*public void getBestCount()
+    {
+        return bestScore;
+    }
+
+    public void BestCount(int count)
+    {
+        if (count > bestScore)
+        {
+            bestScore = count;
+        }
+        else
+        {
+            bestScore = 
+        }
+    }*/
 }
 

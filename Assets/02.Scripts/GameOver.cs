@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameOver : MonoBehaviour
 {
     public Image gameOverImge;
+    public GameObject BGMStop;
     public GameObject GameOverSound;
 
     public bool isEnter = false;
@@ -21,11 +22,15 @@ public class GameOver : MonoBehaviour
 
         if (col.tag == "obs")
         {
-            AudioSource GameoverSound = GameOverSound.GetComponent<AudioSource>();
-            GameoverSound.Stop();
-
             gameOverImge.gameObject.SetActive(true);
+
             isEnter = true;
+
+            AudioSource BGMSound = BGMStop.GetComponent<AudioSource>();
+            AudioSource GameOver = GameOverSound.GetComponent<AudioSource>();
+
+            GameOver.Play();
+            BGMSound.Stop();
         }
     }
 }
