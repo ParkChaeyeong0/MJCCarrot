@@ -46,14 +46,14 @@ public class PlyerMove : MonoBehaviour
                 movePos.y = 0;
                 movePos.z = 0;
                 gameObject.transform.Translate(movePos);
-                prePos = touch.position - touch.deltaPosition;
+                prePos = touch.position + touch.deltaPosition;
             }
         } //플레이어 x축 드래그터치 이동
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Coin"))
+        if (other.tag == "Coin")
         {
             //Singleton에서 increaseCount 클래스 가져옴.
             Singleton.getInstance.increaseCount();
