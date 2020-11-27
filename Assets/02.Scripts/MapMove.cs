@@ -29,5 +29,10 @@ public class MapMove : MonoBehaviour
     void Move()
     {
         tr.Translate(Vector3.back * moveSpeed * Time.deltaTime);
+        moveSpeed += Time.fixedDeltaTime;
+        //if (moveSpeed >= 50)
+        //{
+        //    moveSpeed = moveSpeed + Time.fixedDeltaTime + 1;
+        //}   갈수록 빨라지는 속도 조정 가능
     }
 }
