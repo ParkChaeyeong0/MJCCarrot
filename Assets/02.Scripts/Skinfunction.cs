@@ -6,6 +6,7 @@ public class Skinfunction : MonoBehaviour
 {
     private int randomNumber;
 
+    //캐릭터 회전 속도
     private float skinRotation = 50.0f;
 
     public GameObject skinLock0, skinLock1, skinLock2, skinLock3, skinLock4;
@@ -14,6 +15,7 @@ public class Skinfunction : MonoBehaviour
 
     void Update()
     {
+        //캐릭터 회전
         transform.Rotate(new Vector3(0, skinRotation * Time.deltaTime, 0));
     }
 
@@ -22,6 +24,33 @@ public class Skinfunction : MonoBehaviour
         randomNumber = Random.Range(0, 5);
 
         RandomSkinSelect();
+    }
+
+    public int[] GetRandomInt(int length, int min, int max)
+    {
+        int[] randArray = new int[length];
+        bool isSame;
+
+        for (int i = 0; i<length; ++i)
+        {
+            while (true)
+            {
+                randArray[i] = Random.Range(min, max);
+                isSame = false;
+
+                for(int j=0; j<i; ++j)
+                {
+                    if(randArray[j] == randArray[i])
+                    {
+                        isSame = true;
+                        break;
+                    }
+                }
+
+                if (!isSame) break;
+            }
+        }
+        return randArray;
     }
 
     // Random버튼 선택
