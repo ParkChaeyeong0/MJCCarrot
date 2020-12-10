@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject settingImg;
     public GameObject producerImg;
     public GameObject ItemDialogImg;
+    public GameObject ItemDialogChoiceImg;
 
     public GameObject SettingButtonSound;
     public GameObject StartButton;
@@ -106,6 +107,17 @@ public class GameManager : MonoBehaviour
     public void OnClick_ItemDialogClose()
     {
         ItemDialogImg.SetActive(false);
+    }
+
+    //아이템 구매 창 띄우고 닫는 버튼
+    public void OnClick_ItemChoiceDialogOpen()
+    {
+        ItemDialogChoiceImg.SetActive(true);
+    }
+
+    public void OnClick_ItemChoiceDialogClose()
+    {
+        ItemDialogChoiceImg.SetActive(false);
     }
 
     // 설정 창 띄우고 닫는 버튼
