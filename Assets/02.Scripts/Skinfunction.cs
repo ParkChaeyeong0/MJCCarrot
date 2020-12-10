@@ -149,6 +149,6 @@ public class Skinfunction : MonoBehaviour
         skinCharacter2.SetActive(false);
         skinCharacter3.SetActive(false);
         Lock0.SetActive(false);
-        Lock2.SetActive(false);
+        Lock1.SetActive(false);
     }
 }
