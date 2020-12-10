@@ -6,50 +6,63 @@ public class Skinfunction : MonoBehaviour
 {
     public List<int> randomNumber = new List<int>() { 0, 1, 2};
 
+    public bool Skin0 = true;
+    public bool Skin1 = true;
+    public bool Skin2 = true;
+
     //캐릭터 회전 속도
     private float skinRotation = 50.0f;
 
+    public GameObject failImage;
     public GameObject skinLock0, skinLock1, skinLock2;
-
     public GameObject skinCharacter0, skinCharacter1, skinCharacter2, skinCharacter3, Lock0, Lock1, Lock2;
 
     void Update()
     {
         //캐릭터 회전
-        //transform.Rotate(new Vector3(0, skinRotation * Time.deltaTime, 0));
+        transform.Rotate(new Vector3(0, skinRotation * Time.deltaTime, 0));
+    }
+
+    public void OnClick_Close()
+    {
+        failImage.SetActive(false);
     }
 
     public void OnClick_RandomButton()
     {
         int rand = Random.Range(0, randomNumber.Count);
-        randomNumber.RemoveAt(rand);
 
         switch (rand)
-            {
-                case 0:
+        {
+            case 0:
 
-                    skinLock0.gameObject.SetActive(false);
-                    Lock0.SetActive(false);
-                    Debug.Log("0");
+                Skin0 = false;
+                skinLock0.gameObject.SetActive(false);
+                Lock0.SetActive(false);
 
-                    break;
+                Debug.Log("0");
 
-                case 1:
+                break;
 
-                    skinLock1.gameObject.SetActive(false);
-                    Lock1.SetActive(false);
-                    Debug.Log("1");
+            case 1:
 
-                    break;
+                Skin1 = false;
+                skinLock1.gameObject.SetActive(false);
+                Lock1.SetActive(false);
 
-                case 2:
+                Debug.Log("1");
 
-                    skinLock2.gameObject.SetActive(false);
-                    Lock2.SetActive(false);
-                    Debug.Log("2");
+                break;
 
-                    break;
+            case 2:
 
+                Skin2 = false;
+                skinLock2.gameObject.SetActive(false);
+                Lock2.SetActive(false);
+
+                Debug.Log("2");
+
+                break;
         }
     }
 
