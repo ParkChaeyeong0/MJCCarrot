@@ -744,10 +744,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 7fb95143-6470-4652-be99-ee165786ae60
+  cloudProjectId: c62086b0-ecd4-49db-8ed5-41dad6c18daa
   framebufferDepthMemorylessMode: 0
-  projectName: FindTheCarrot (1)
-  organizationId: lsyokoksj
+  projectName: FindTheCarrot
+  organizationId: unity_0913tkfkdgo
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
