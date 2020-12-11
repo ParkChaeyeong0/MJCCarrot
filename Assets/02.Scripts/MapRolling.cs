@@ -26,9 +26,9 @@ public class MapRolling : MonoBehaviour
     void Update()
     {
 
-        if (trans.position.z < -123.5)
+        if (trans.position.z < -260)
         {
-            trans.position = new Vector3(nowPos.x,nowPos.y,nowPos.z);
+            trans.position = new Vector3(nowPos.x,nowPos.y,104.3f);
           
         }
     }
