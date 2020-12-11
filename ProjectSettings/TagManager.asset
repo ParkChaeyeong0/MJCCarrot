@@ -6,6 +6,9 @@ TagManager:
   tags:
   - obs
   - Coin
+  - MagnetItem
+  - SlowSpeedItem
+  - ShieldItem
   layers:
   - Default
   - TransparentFX

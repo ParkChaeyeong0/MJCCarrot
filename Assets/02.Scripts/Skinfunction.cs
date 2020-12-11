@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Skinfunction : MonoBehaviour
 {
-    public List<int> randomNumber = new List<int>() { 0, 1, 2};
+
+    public List<int> randNum = new List<int>() ;
 
     public bool Skin0 = true;
     public bool Skin1 = true;
@@ -16,6 +17,11 @@ public class Skinfunction : MonoBehaviour
     public GameObject failImage;
     public GameObject skinLock0, skinLock1, skinLock2;
     public GameObject skinCharacter0, skinCharacter1, skinCharacter2, skinCharacter3, Lock0, Lock1, Lock2;
+
+
+    int randRe;
+
+   
 
     void Update()
     {
@@ -30,40 +36,63 @@ public class Skinfunction : MonoBehaviour
 
     public void OnClick_RandomButton()
     {
-        int rand = Random.Range(0, randomNumber.Count);
+        int rand = Random.Range(0, 3);
+        Debug.Log(randNum.Contains(rand));
 
-        switch (rand)
+        if (randNum.Contains(rand))
         {
-            case 0:
-
-                Skin0 = false;
-                skinLock0.gameObject.SetActive(false);
-                Lock0.SetActive(false);
-
-                Debug.Log("0");
-
-                break;
-
-            case 1:
-
-                Skin1 = false;
-                skinLock1.gameObject.SetActive(false);
-                Lock1.SetActive(false);
-
-                Debug.Log("1");
-
-                break;
-
-            case 2:
-
-                Skin2 = false;
-                skinLock2.gameObject.SetActive(false);
-                Lock2.SetActive(false);
-
-                Debug.Log("2");
-
-                break;
+            for (;;)
+            {
+                rand = Random.Range(0, 3);
+                if (randNum.Contains(rand) == false)
+                {
+                    break;
+                }
+            }
+        
         }
+       
+       
+            switch (rand)
+            {
+                case 0:
+
+                    Skin0 = false;
+                    skinLock0.gameObject.SetActive(false);
+                    Lock0.SetActive(false);
+                    randRe = 0;
+                    randNum.Add(0);
+                    Debug.Log("0");
+
+                    break;
+
+                case 1:
+
+                    Skin1 = false;
+                    skinLock1.gameObject.SetActive(false);
+                    Lock1.SetActive(false);
+                    randRe = 1;
+                    randNum.Add(1);
+                    Debug.Log("1");
+
+                    break;
+
+                case 2:
+
+                    Skin2 = false;
+                    skinLock2.gameObject.SetActive(false);
+                    Lock2.SetActive(false);
+                    randRe = 2;
+                    randNum.Add(2);
+                    Debug.Log("2");
+
+                    break;
+            }
+        
+            
+
+   
+
     }
 
     // Skin 선택

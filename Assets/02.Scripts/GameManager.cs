@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     //public Image gameOverImge;
 
     public bool isEnter = false;
+    public bool magnetSelect = false;
+    public bool timeSelect = false;
+    public bool shieldSelect = false;
 
     [SerializeField]
     private Text Score;
@@ -113,6 +116,25 @@ public class GameManager : MonoBehaviour
     public void OnClick_ItemChoiceDialogOpen()
     {
         ItemDialogChoiceImg.SetActive(true);
+    }
+
+    public void OnClick_magnetChoiceDialog()
+    {
+        magnetSelect = true;
+        ItemDialogChoiceImg.SetActive(false);
+
+    }
+
+    public void OnClick_TimeChoiceDialog()
+    {
+        timeSelect = true;
+        ItemDialogChoiceImg.SetActive(false);
+    }
+
+    public void OnClick_shieldChoiceDialog()
+    {
+        shieldSelect = true;
+        ItemDialogChoiceImg.SetActive(false);
     }
 
     public void OnClick_ItemChoiceDialogClose()
