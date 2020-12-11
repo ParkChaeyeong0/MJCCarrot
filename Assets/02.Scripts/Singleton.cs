@@ -65,6 +65,12 @@ public class Singleton
         totalCount = totalCount + count;
     }
 
+    //메인화면 총 점수 + 광고 코인
+    public void sumAdCount(int Ad = 10)
+    {
+        totalCount = totalCount + Ad;
+    }
+
     /*public void getBestCount()
     {
         return bestScore;
