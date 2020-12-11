@@ -6,6 +6,7 @@ TagManager:
   tags:
   - obs
   - Coin
+  - Map
   layers:
   - Default
   - TransparentFX

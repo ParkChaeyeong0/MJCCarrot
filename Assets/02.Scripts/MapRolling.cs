@@ -10,7 +10,7 @@ public class MapRolling : MonoBehaviour
 
     void Awake()
     {
-        nowPos = this.gameObject.transform.position;
+        nowPos = this.gameObject.transform.localPosition;
      
     }
 
@@ -26,9 +26,9 @@ public class MapRolling : MonoBehaviour
     void Update()
     {
 
-        if (trans.position.z < -260)
+        if (trans.localPosition.z < -346.7)
         {
-            trans.position = new Vector3(nowPos.x,nowPos.y,195f);
+            trans.localPosition = new Vector3(nowPos.x,nowPos.y, 195.3f);
           
         }
     }
