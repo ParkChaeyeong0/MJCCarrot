@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject producerImg;
     public GameObject ItemDialogImg;
     public GameObject ItemDialogChoiceImg;
+    public GameObject ItemDialogChoiceImg1;
+    public GameObject ItemDialogChoiceImg2;
 
     public GameObject SettingButtonSound;
     public GameObject StartButton;
@@ -21,6 +23,9 @@ public class GameManager : MonoBehaviour
     //public Image gameOverImge;
 
     public bool isEnter = false;
+    public bool magnetSelect = false;
+    public bool timeSelect = false;
+    public bool shieldSelect = false;
 
     [SerializeField]
     private Text Score;
@@ -115,9 +120,39 @@ public class GameManager : MonoBehaviour
         ItemDialogChoiceImg.SetActive(true);
     }
 
+    public void OnClick_ItemChoiceDialogOpen1()
+    {
+        ItemDialogChoiceImg1.SetActive(true);
+    }
+
+    public void OnClick_ItemChoiceDialogOpen2()
+    {
+        ItemDialogChoiceImg2.SetActive(true);
+    }
+
+    public void OnClick_magnetChoiceDialogClose()
+    {
+        magnetSelect = true;
+        ItemDialogChoiceImg.SetActive(false);
+    }
+
+    public void OnClick_TimeChoiceDialogClose()
+    {
+        timeSelect = true;
+        ItemDialogChoiceImg1.SetActive(false);
+    }
+
+    public void OnClick_shieldChoiceDialogClose()
+    {
+        shieldSelect = true;
+        ItemDialogChoiceImg2.SetActive(false);
+    }
+
     public void OnClick_ItemChoiceDialogClose()
     {
         ItemDialogChoiceImg.SetActive(false);
+        ItemDialogChoiceImg1.SetActive(false);
+        ItemDialogChoiceImg2.SetActive(false);
     }
 
     // 설정 창 띄우고 닫는 버튼
