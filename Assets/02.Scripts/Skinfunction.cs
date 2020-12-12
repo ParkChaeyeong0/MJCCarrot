@@ -23,6 +23,7 @@ public class Skinfunction : MonoBehaviour
     {
         //캐릭터 회전
         transform.Rotate(new Vector3(0, skinRotation * Time.deltaTime, 0));
+
     }
 
     public void OnClick_Close()
@@ -37,16 +38,23 @@ public class Skinfunction : MonoBehaviour
 
         if (randNum.Contains(rand))
         {
-            for (; ; )
+            for (;;)
             {
                 rand = Random.Range(0, 3);
-                if (randNum.Contains(rand) == false)
+                //if (randNum.Contains(rand) == false)
+                //{
+                //    continue;
+                //}
+
+                if (randNum.Count > 3)
                 {
                     break;
                 }
             }
 
         }
+
+
 
 
         switch (rand)

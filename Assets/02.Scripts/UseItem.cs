@@ -6,11 +6,14 @@ public class UseItem : MonoBehaviour
 {
 
     MapMove []mapMove ;
- 
+    public GameObject playerChracter;
+
     
     void Start()
     {
         mapMove = GameObject.FindObjectsOfType<MapMove>();
+        playerChracter = GameObject.FindWithTag("Player");
+   
     }
 
 
@@ -25,12 +28,22 @@ public class UseItem : MonoBehaviour
 
     public void UseShield()
     {
+        StartCoroutine("Invisivle");
+    }
 
+    IEnumerator Invisivle()
+    {
+        playerChracter.layer = 10;
+        yield return new WaitForSeconds(5.0f);
+        playerChracter.layer = 0;
+        
     }
 
     public void UseMagnet()
     {
 
     }
+
+    
 
 }

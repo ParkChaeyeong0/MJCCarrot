@@ -511,7 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541794e9537456c4bbca12a60b361f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomNumber: 000000000100000002000000
+  randNum: []
   Skin0: 1
   Skin1: 1
   Skin2: 1
@@ -1185,7 +1185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541794e9537456c4bbca12a60b361f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomNumber: 000000000100000002000000
+  randNum: []
   Skin0: 1
   Skin1: 1
   Skin2: 1
@@ -1296,7 +1296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541794e9537456c4bbca12a60b361f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomNumber: 000000000100000002000000
+  randNum: []
   Skin0: 1
   Skin1: 1
   Skin2: 1
@@ -1634,12 +1634,17 @@ MonoBehaviour:
   producerImg: {fileID: 0}
   ItemDialogImg: {fileID: 0}
   ItemDialogChoiceImg: {fileID: 0}
+  ItemDialogChoiceImg1: {fileID: 0}
+  ItemDialogChoiceImg2: {fileID: 0}
   SettingButtonSound: {fileID: 0}
   StartButton: {fileID: 0}
   StartButtonSound: {fileID: 0}
   PlayButtonSound: {fileID: 0}
   SkinButtonSound: {fileID: 0}
   isEnter: 0
+  magnetSelect: 0
+  timeSelect: 0
+  shieldSelect: 0
   Score: {fileID: 0}
   LastEqualsScore: {fileID: 0}
 --- !u!4 &750979599
@@ -1668,7 +1673,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541794e9537456c4bbca12a60b361f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomNumber: 000000000100000002000000
+  randNum:
+  - {fileID: 974798062}
+  - {fileID: 1811046256}
+  - {fileID: 208091740}
   Skin0: 1
   Skin1: 1
   Skin2: 1
@@ -4079,7 +4087,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1963158643
 GameObject:
@@ -4183,7 +4191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541794e9537456c4bbca12a60b361f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomNumber: 000000000100000002000000
+  randNum: []
   Skin0: 1
   Skin1: 1
   Skin2: 1

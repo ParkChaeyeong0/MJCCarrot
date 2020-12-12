@@ -33,9 +33,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text LastEqualsScore;
 
+
     void Start()
     {
         LastEqualsScore.text = "" + Singleton.getInstance.getTotalCount();
+       
     }
 
     // 인게임 코인 표시
@@ -98,6 +100,12 @@ public class GameManager : MonoBehaviour
         HomeButtonSound.Play();
 
         SceneManager.LoadScene("MainScene");
+
+        magnetSelect = false;
+        shieldSelect = false;
+        timeSelect = false; // 2020.12.12 홈버튼 누르면 아이템 선택안함상태로 초기화
+
+        
     }
 
     // 아이템 창 띄우고 닫는 버튼

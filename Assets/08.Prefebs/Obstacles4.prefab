@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6030475255917877593}
   - component: {fileID: 7133200771785571286}
   - component: {fileID: 3035677410083530493}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "\uC0AC\uAC01\uD615"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7081037686298770090}
   - component: {fileID: 7335905567381496460}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Obstacles4
   m_TagString: obs
   m_Icon: {fileID: 0}
