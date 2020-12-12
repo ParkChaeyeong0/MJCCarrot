@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
         RyPlayButtonSound.Play();
 
         SceneManager.LoadSceneAsync("PlayScene");
-        OnClick_Start();
+        void Start()
     }
     
 
