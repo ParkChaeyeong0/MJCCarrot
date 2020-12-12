@@ -26,7 +26,7 @@ public class MapMove : MonoBehaviour
     }
 
     // 맵이동
-    void Move()
+    public void Move()
     {
         tr.Translate(Vector3.back * moveSpeed * Time.deltaTime);
         moveSpeed += Time.fixedDeltaTime;

@@ -12,14 +12,14 @@ public class AudioSetting : MonoBehaviour
     public Slider audioSlider;
     public AudioSource audio;
 
-    private float backVol = 1f;
+    private float bGM = 1f;
 
     private void Start()
     {
         DontDestroyOnLoad(transform.gameObject);
 
-        backVol = PlayerPrefs.GetFloat("backvol", 1f);
-        audioSlider.value = backVol;
+        bGM = PlayerPrefs.GetFloat("backvol", 1f);
+        audioSlider.value = bGM;
         audio.volume = audioSlider.value;
     }
 
@@ -32,8 +32,8 @@ public class AudioSetting : MonoBehaviour
     {
         audio.volume = audioSlider.value;
 
-        backVol = audioSlider.value;
-        PlayerPrefs.SetFloat("backvol", backVol);
+        bGM = audioSlider.value;
+        PlayerPrefs.SetFloat("backvol", bGM);
     }
 
 }
