@@ -54,6 +54,11 @@ public class Singleton
         count = 0;
     }
 
+    public int getBestScore()
+    {
+        return bestScore;
+    }
+
     public int getTotalCount()
     {
         return totalCount;
@@ -65,27 +70,20 @@ public class Singleton
         totalCount = totalCount + count;
     }
 
+    public void minusTotalCount(int count)
+    {
+        totalCount = totalCount - count;
+    }
+
+    public void changeBestScore(int count)
+    {
+        bestScore = count;
+    }
+
     //메인화면 총 점수 + 광고 코인
     public void sumAdCount(int Ad = 10)
     {
         totalCount = totalCount + Ad;
     }
-
-    /*public void getBestCount()
-    {
-        return bestScore;
-    }
-
-    public void BestCount(int count)
-    {
-        if (count > bestScore)
-        {
-            bestScore = count;
-        }
-        else
-        {
-            bestScore = 
-        }
-    }*/
 }
 

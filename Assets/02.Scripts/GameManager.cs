@@ -29,13 +29,16 @@ public class GameManager : MonoBehaviour
     private Text Score;
 
     [SerializeField]
-    private Text LastEqualsScore;
+    private Text TotalScore;
+
+    [SerializeField]
+    private Text BestScore;
 
 
     void Start()
     {
-        LastEqualsScore.text = "" + Singleton.getInstance.getTotalCount();
-       
+        TotalScore.text = "" + Singleton.getInstance.getTotalCount();
+        BestScore.text = "Best Score : " + Singleton.getInstance.getBestScore();
     }
 
     // 인게임 코인 표시
@@ -78,6 +81,16 @@ public class GameManager : MonoBehaviour
     // 플레이 씬에서 사용
     public void ChangePlayScene()
     {
+        int best = Singleton.getInstance.getBestScore();
+        int count = Singleton.getInstance.getCount();
+
+        Singleton.getInstance.sumTotalCount(count);
+
+        if(best < count)
+        {
+            //best = Singleton.getInstance.getBestScore(count);
+        }
+
         //Restart 버튼 눌렀을 시 스코어 다시 카운트
         Time.timeScale = 1f;
 
@@ -91,8 +104,15 @@ public class GameManager : MonoBehaviour
 
     public void ChangeMainScene()
     {
+        int best = Singleton.getInstance.getBestScore();
         int count = Singleton.getInstance.getCount();
+
         Singleton.getInstance.sumTotalCount(count);
+
+        if (best < count)
+        {
+            //best = count;
+        }
 
         AudioSource HomeButtonSound = StartButtonSound.GetComponent<AudioSource>();
         HomeButtonSound.Play();
@@ -150,7 +170,21 @@ public class GameManager : MonoBehaviour
 
     public void OnClick_shieldChoiceDialogClose()
     {
+        // 아이템 구매 완료 창 만들기
         shieldSelect = true;
+        int total = Singleton.getInstance.getTotalCount();
+
+        if (total < 5)
+        {
+            Debug.Log("코인이 없음");
+        }
+
+        else if(total >= 5)
+        {
+            Singleton.getInstance.minusTotalCount(5);
+            TotalScore.text = "" + Singleton.getInstance.getTotalCount();
+        }
+
         ItemDialogChoiceImg2.SetActive(false);
     }
 

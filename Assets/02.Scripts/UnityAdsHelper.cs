@@ -43,6 +43,8 @@ public class UnityAdsHelper : MonoBehaviour
                     int count = Singleton.getInstance.getCount();
                     Singleton.getInstance.sumAdCount(count);
 
+                    Debug.Log("성공");
+
                     // to do ...
                     // 광고 시청이 완료되었을 때 처리
 
@@ -50,11 +52,8 @@ public class UnityAdsHelper : MonoBehaviour
                 }
             case ShowResult.Skipped:
                 {
-                    Debug.Log("The ad was skipped before reaching the end.");
 
-                    int count = Singleton.getInstance.getCount();
-                    Singleton.getInstance.sumAdCount(count);
-
+                    Debug.Log("스킵");
                     // to do ...
                     // 광고가 스킵되었을 때 처리
 
@@ -62,10 +61,6 @@ public class UnityAdsHelper : MonoBehaviour
                 }
             case ShowResult.Failed:
                 {
-                    Debug.LogError("The ad failed to be shown.");
-
-                    int count = Singleton.getInstance.getCount();
-                    Singleton.getInstance.sumAdCount(count);
 
                     // to do ...
                     // 광고 시청에 실패했을 때 처리

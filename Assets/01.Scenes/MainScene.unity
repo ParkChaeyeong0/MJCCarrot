@@ -581,7 +581,8 @@ MonoBehaviour:
   timeSelect: 0
   shieldSelect: 0
   Score: {fileID: 0}
-  LastEqualsScore: {fileID: 1111119937}
+  TotalScore: {fileID: 1111119937}
+  BestScore: {fileID: 2002700210}
 --- !u!114 &98405829
 MonoBehaviour:
   m_ObjectHideFlags: 0
