@@ -34,7 +34,7 @@ public class Skinfunction : MonoBehaviour
     {
         int rand = Random.Range(0, 3);
         Debug.Log(rand);
-
+        
 
         if (randNum.Contains(rand))
         {
@@ -45,6 +45,12 @@ public class Skinfunction : MonoBehaviour
                 //{
                 //    continue;
                 //}
+
+                if (!randNum.Contains(rand))
+                {
+                    Debug.Log("중복");
+                    break;
+                }
 
                 if (randNum.Count > 3)
                 {
