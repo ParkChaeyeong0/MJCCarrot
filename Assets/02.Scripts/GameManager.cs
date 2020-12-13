@@ -20,8 +20,6 @@ public class GameManager : MonoBehaviour
     public GameObject PlayButtonSound;
     public GameObject SkinButtonSound;
 
-    //public Image gameOverImge;
-
     public bool isEnter = false;
     public bool magnetSelect = false;
     public bool timeSelect = false;
@@ -87,7 +85,7 @@ public class GameManager : MonoBehaviour
         RyPlayButtonSound.Play();
 
         SceneManager.LoadSceneAsync("PlayScene");
-        void Start()
+        //void Start()
     }
     
 

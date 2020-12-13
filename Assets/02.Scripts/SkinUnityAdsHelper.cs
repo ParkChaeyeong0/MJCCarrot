@@ -3,6 +3,9 @@ using UnityEngine.Advertisements;
 
 public class SkinUnityAdsHelper : MonoBehaviour
 {
+
+    Skinfunction isSkinfunction;
+
     private const string android_game_id = "3933763";
     private const string ios_game_id = "3933762";
 
@@ -42,6 +45,9 @@ public class SkinUnityAdsHelper : MonoBehaviour
 
                     // to do ...
                     // 광고 시청이 완료되었을 때 처리
+
+                    isSkinfunction = GameObject.Find("Skin0").GetComponent<Skinfunction>();
+                    isSkinfunction.OnClick_RandomButton();
 
                     break;
                 }

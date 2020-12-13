@@ -511,11 +511,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541794e9537456c4bbca12a60b361f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randNum: []
+  randNum: 
   Skin0: 1
   Skin1: 1
   Skin2: 1
-  failImage: {fileID: 0}
   skinLock0: {fileID: 0}
   skinLock1: {fileID: 0}
   skinLock2: {fileID: 0}
@@ -1185,11 +1184,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541794e9537456c4bbca12a60b361f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randNum: []
+  randNum: 
   Skin0: 1
   Skin1: 1
   Skin2: 1
-  failImage: {fileID: 0}
   skinLock0: {fileID: 0}
   skinLock1: {fileID: 0}
   skinLock2: {fileID: 0}
@@ -1296,14 +1294,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541794e9537456c4bbca12a60b361f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randNum: []
+  randNum: 
   Skin0: 1
   Skin1: 1
   Skin2: 1
-  failImage: {fileID: 0}
-  skinLock0: {fileID: 0}
-  skinLock1: {fileID: 0}
-  skinLock2: {fileID: 0}
+  skinLock0: {fileID: 1204563173}
+  skinLock1: {fileID: 962255714}
+  skinLock2: {fileID: 799471419}
   skinCharacter0: {fileID: 0}
   skinCharacter1: {fileID: 0}
   skinCharacter2: {fileID: 0}
@@ -1673,14 +1670,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541794e9537456c4bbca12a60b361f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randNum:
-  - {fileID: 974798062}
-  - {fileID: 1811046256}
-  - {fileID: 208091740}
+  randNum: 000000000000000000000000
   Skin0: 1
   Skin1: 1
   Skin2: 1
-  failImage: {fileID: 1791770739}
   skinLock0: {fileID: 1204563173}
   skinLock1: {fileID: 962255714}
   skinLock2: {fileID: 799471419}
@@ -4191,11 +4184,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541794e9537456c4bbca12a60b361f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randNum: []
+  randNum: 
   Skin0: 1
   Skin1: 1
   Skin2: 1
-  failImage: {fileID: 0}
   skinLock0: {fileID: 0}
   skinLock1: {fileID: 0}
   skinLock2: {fileID: 0}

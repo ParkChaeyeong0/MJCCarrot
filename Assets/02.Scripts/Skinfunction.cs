@@ -15,7 +15,6 @@ public class Skinfunction : MonoBehaviour
     //캐릭터 회전 속도
     private float skinRotation = 50.0f;
 
-    public GameObject failImage;
     public GameObject skinLock0, skinLock1, skinLock2;
     public GameObject skinCharacter0, skinCharacter1, skinCharacter2, skinCharacter3, Lock0, Lock1, Lock2;
 
@@ -26,15 +25,16 @@ public class Skinfunction : MonoBehaviour
 
     }
 
-    public void OnClick_Close()
+    public void Test()
     {
-        failImage.SetActive(false);
+        Debug.Log("test");
     }
 
     public void OnClick_RandomButton()
     {
         int rand = Random.Range(0, 3);
-        Debug.Log(randNum.Contains(rand));
+        Debug.Log(rand);
+
 
         if (randNum.Contains(rand))
         {
@@ -53,9 +53,6 @@ public class Skinfunction : MonoBehaviour
             }
 
         }
-
-
-
 
         switch (rand)
         {
@@ -92,11 +89,9 @@ public class Skinfunction : MonoBehaviour
 
                 break;
         }
-
-
-
-
     }
+
+
 
     // Skin 선택
     public void OnClick_Skin()
