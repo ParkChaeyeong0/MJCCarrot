@@ -366,10 +366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28764b8ad2cfdc4a96f76c74015766a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GachList:
-  - "\uCE58\uD0A8"
-  - "\uD53C\uC790"
-  - "\uD584\uBC84\uAC70"
 --- !u!1 &534711965
 GameObject:
   m_ObjectHideFlags: 0

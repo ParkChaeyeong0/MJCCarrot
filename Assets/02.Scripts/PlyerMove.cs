@@ -69,4 +69,5 @@ public class PlyerMove : MonoBehaviour
             CoinGetSound.Play();
         }
     }
+  
 }
