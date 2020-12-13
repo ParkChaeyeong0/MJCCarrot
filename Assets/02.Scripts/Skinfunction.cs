@@ -9,7 +9,7 @@ public class Skinfunction : MonoBehaviour
     public bool Skin0 = true;
     public bool Skin1 = true;
     public bool Skin2 = true;
-
+    int rand;
     int randRe;
 
     //캐릭터 회전 속도
@@ -32,33 +32,33 @@ public class Skinfunction : MonoBehaviour
 
     public void OnClick_RandomButton()
     {
-        int rand = Random.Range(0, 3);
+       // int rand = Random.Range(0, 3);
         Debug.Log(rand);
-        
 
-        if (randNum.Contains(rand))
+        if (randNum.Count >= 3)
         {
-            for (;;)
-            {
-                rand = Random.Range(0, 3);
-                //if (randNum.Contains(rand) == false)
-                //{
-                //    continue;
-                //}
+            Debug.Log("스킨 모두획득");
+        }
 
-                if (!randNum.Contains(rand))
+        else
+        {
+            for (; ; )
+            {
+                if (randNum.Contains(rand))
                 {
-                    Debug.Log("중복");
-                    break;
+                    rand = Random.Range(0, 3);
                 }
 
-                if (randNum.Count > 3)
+                else
                 {
                     break;
                 }
             }
-
         }
+
+
+
+
 
         switch (rand)
         {
