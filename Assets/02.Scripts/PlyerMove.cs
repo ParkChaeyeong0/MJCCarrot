@@ -27,6 +27,8 @@ public class PlyerMove : MonoBehaviour
         {
             move();
         }
+
+
         
 
     }
@@ -51,7 +53,7 @@ public class PlyerMove : MonoBehaviour
         } //플레이어 x축 드래그터치 이동
     }
 
-    private void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Coin")
         {

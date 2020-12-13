@@ -7,10 +7,13 @@ public class PlayUnityAdsHelper : MonoBehaviour
     private const string ios_game_id = "3933762";
 
     private const string rewarded_video_id = "rewardedVideo";
-
+    GameOver gameOver;
+    PlayCounter playCounter;
     void Start()
     {
         Initialize();
+        gameOver = GameObject.Find("Player").GetComponent<GameOver>();
+        playCounter = GameObject.Find("Counter").GetComponent<PlayCounter>();
     }
 
     private void Initialize()
@@ -42,7 +45,12 @@ public class PlayUnityAdsHelper : MonoBehaviour
 
                     // to do ...
                     // 광고 시청이 완료되었을 때 처리
-
+                    playCounter.Setting();
+             
+                    gameOver.isEnter = false;
+                    gameOver.gameOverImge.gameObject.SetActive(false);
+                    AudioSource BGMSound = gameOver.BGMStop.GetComponent<AudioSource>();
+                    BGMSound.Play();
                     break;
                 }
             case ShowResult.Skipped:

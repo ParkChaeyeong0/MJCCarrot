@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public bool timeSelect = false;
     public bool shieldSelect = false;
 
+
+
     [SerializeField]
     private Text Score;
 
@@ -35,7 +37,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         LastEqualsScore.text = "" + Singleton.getInstance.getTotalCount();
-       
+
+
     }
 
     // 인게임 코인 표시
@@ -85,6 +88,7 @@ public class GameManager : MonoBehaviour
         RyPlayButtonSound.Play();
 
         SceneManager.LoadSceneAsync("PlayScene");
+      
         //void Start()
     }
     
