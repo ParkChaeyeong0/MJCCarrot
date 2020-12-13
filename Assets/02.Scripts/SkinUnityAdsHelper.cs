@@ -47,7 +47,7 @@ public class SkinUnityAdsHelper : MonoBehaviour
                     // 광고 시청이 완료되었을 때 처리
 
                     isSkinfunction = GameObject.Find("Skin0").GetComponent<Skinfunction>();
-                    isSkinfunction.OnClick_RandomButton();
+                    isSkinfunction.OnClick_OneMore();
 
                     break;
                 }
