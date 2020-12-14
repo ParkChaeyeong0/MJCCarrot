@@ -267,7 +267,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91054766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.8, y: -8.395197, z: 43}
+  m_LocalPosition: {x: 1.8, y: -8.395197, z: 43}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 15236305}
@@ -3734,6 +3734,8 @@ MonoBehaviour:
   ItemDialogChoiceImg: {fileID: 0}
   ItemDialogChoiceImg1: {fileID: 0}
   ItemDialogChoiceImg2: {fileID: 0}
+  SuccessGetItemDialog: {fileID: 0}
+  FailGetItemDialog: {fileID: 0}
   SettingButtonSound: {fileID: 0}
   StartButton: {fileID: 0}
   StartButtonSound: {fileID: 1796651332}
@@ -7973,7 +7975,7 @@ PrefabInstance:
     - target: {fileID: 4030485392950002643, guid: 75d13b27c10d0284ca81bd1a77227b34,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4030485392950002643, guid: 75d13b27c10d0284ca81bd1a77227b34,
         type: 3}
@@ -9109,7 +9111,7 @@ PrefabInstance:
     - target: {fileID: 4030485392950002643, guid: 75d13b27c10d0284ca81bd1a77227b34,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.4931755
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 4030485392950002643, guid: 75d13b27c10d0284ca81bd1a77227b34,
         type: 3}
@@ -9134,7 +9136,7 @@ PrefabInstance:
     - target: {fileID: 4030485392950002643, guid: 75d13b27c10d0284ca81bd1a77227b34,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4030485392950002643, guid: 75d13b27c10d0284ca81bd1a77227b34,
         type: 3}

@@ -10,6 +10,7 @@ public class GameOver : MonoBehaviour
     public GameObject GameOverSound;
 
     public bool isEnter = false;
+    private int count = Singleton.getInstance.getCount();
 
     void Start()
     {
@@ -25,6 +26,11 @@ public class GameOver : MonoBehaviour
             gameOverImge.gameObject.SetActive(true);
 
             isEnter = true;
+
+            if (count > PlayerPrefs.GetInt("BestScore", 0))
+            {
+                PlayerPrefs.SetInt("BestScore", count);
+            }
 
             AudioSource BGMSound = BGMStop.GetComponent<AudioSource>();
             AudioSource GameOver = GameOverSound.GetComponent<AudioSource>();
