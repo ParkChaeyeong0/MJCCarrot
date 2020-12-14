@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public GameObject ItemDialogChoiceImg;
     public GameObject ItemDialogChoiceImg1;
     public GameObject ItemDialogChoiceImg2;
+    public GameObject SuccessGetItemDialog;
+    public GameObject FailGetItemDialog;
 
     public GameObject SettingButtonSound;
     public GameObject StartButton;
@@ -38,7 +40,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         TotalScore.text = "" + Singleton.getInstance.getTotalCount();
-        BestScore.text = "Best Score : " + Singleton.getInstance.getBestScore();
+        BestScore.text = "Best Score : " + PlayerPrefs.GetInt("BestScore", 0).ToString();
     }
 
     // 인게임 코인 표시
@@ -81,15 +83,9 @@ public class GameManager : MonoBehaviour
     // 플레이 씬에서 사용
     public void ChangePlayScene()
     {
-        int best = Singleton.getInstance.getBestScore();
         int count = Singleton.getInstance.getCount();
-
         Singleton.getInstance.sumTotalCount(count);
 
-        if(best < count)
-        {
-            //best = Singleton.getInstance.getBestScore(count);
-        }
 
         //Restart 버튼 눌렀을 시 스코어 다시 카운트
         Time.timeScale = 1f;
@@ -98,21 +94,13 @@ public class GameManager : MonoBehaviour
         RyPlayButtonSound.Play();
 
         SceneManager.LoadSceneAsync("PlayScene");
-        //void Start()
     }
     
 
     public void ChangeMainScene()
     {
-        int best = Singleton.getInstance.getBestScore();
         int count = Singleton.getInstance.getCount();
-
         Singleton.getInstance.sumTotalCount(count);
-
-        if (best < count)
-        {
-            //best = count;
-        }
 
         AudioSource HomeButtonSound = StartButtonSound.GetComponent<AudioSource>();
         HomeButtonSound.Play();
@@ -177,12 +165,15 @@ public class GameManager : MonoBehaviour
         if (total < 5)
         {
             Debug.Log("코인이 없음");
+            FailGetItemDialog.SetActive(true);
         }
 
         else if(total >= 5)
         {
             Singleton.getInstance.minusTotalCount(5);
             TotalScore.text = "" + Singleton.getInstance.getTotalCount();
+
+            SuccessGetItemDialog.SetActive(true);
         }
 
         ItemDialogChoiceImg2.SetActive(false);
@@ -193,6 +184,12 @@ public class GameManager : MonoBehaviour
         ItemDialogChoiceImg.SetActive(false);
         ItemDialogChoiceImg1.SetActive(false);
         ItemDialogChoiceImg2.SetActive(false);
+    }
+
+    public void OnClick_GetItemDialogClose()
+    {
+        FailGetItemDialog.SetActive(false);
+        SuccessGetItemDialog.SetActive(false);
     }
 
     // 설정 창 띄우고 닫는 버튼

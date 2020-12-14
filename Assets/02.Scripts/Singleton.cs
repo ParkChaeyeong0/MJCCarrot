@@ -55,11 +55,6 @@ public class Singleton
         count = 0;
     }
 
-    public int getBestScore()
-    {
-        return bestScore;
-    }
-
     public int getTotalCount()
     {
         return totalCount;
@@ -74,11 +69,6 @@ public class Singleton
     public void minusTotalCount(int count)
     {
         totalCount = totalCount - count;
-    }
-
-    public void changeBestScore(int count)
-    {
-        bestScore = count;
     }
 
     //메인화면 총 점수 + 광고 코인
