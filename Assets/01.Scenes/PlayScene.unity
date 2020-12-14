@@ -3744,7 +3744,8 @@ MonoBehaviour:
   timeSelect: 0
   shieldSelect: 0
   Score: {fileID: 1943533321}
-  LastEqualsScore: {fileID: 1943533321}
+  TotalScore: {fileID: 0}
+  BestScore: {fileID: 0}
 --- !u!4 &848114764
 Transform:
   m_ObjectHideFlags: 0
@@ -9302,6 +9303,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2418173155943136236, guid: e52090caeb8ac594da823af786959887,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 5343546566489759333, guid: 70b02c455ee689f4ab588e2dfdcd2c95,
+        type: 3}
     - target: {fileID: 5987127064421542794, guid: e52090caeb8ac594da823af786959887,
         type: 3}
       propertyPath: gameOverImge
@@ -9317,6 +9324,11 @@ PrefabInstance:
       propertyPath: CoinGetSoundEffect
       value: 
       objectReference: {fileID: 1688363266}
+    - target: {fileID: 5987127064421542806, guid: e52090caeb8ac594da823af786959887,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6096806430550281315, guid: e52090caeb8ac594da823af786959887,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9377,6 +9389,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8109593186194202194, guid: e52090caeb8ac594da823af786959887,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9995e6986a1ab5f4d9d1be899cb111e4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e52090caeb8ac594da823af786959887, type: 3}
 --- !u!1001 &6050735538247433061
