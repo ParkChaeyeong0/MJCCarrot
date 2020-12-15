@@ -258,7 +258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &91054767
 Transform:
   m_ObjectHideFlags: 0
@@ -3871,6 +3871,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerChracter: {fileID: 0}
+  speed: {fileID: 1491642177}
+  shield: {fileID: 1484923650}
+  magnet: {fileID: 1870831599}
 --- !u!1 &852326038
 GameObject:
   m_ObjectHideFlags: 0
