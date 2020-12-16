@@ -146,20 +146,52 @@ public class GameManager : MonoBehaviour
 
     public void OnClick_magnetChoiceDialogClose()
     {
-        magnetSelect = true;
+        int total = Singleton.getInstance.getTotalCount();
+
+        if (total < 5)
+        {
+            Debug.Log("코인이 없음");
+            FailGetItemDialog.SetActive(true);
+        }
+
+        else if (total >= 5)
+        {
+            magnetSelect = true;
+
+            Singleton.getInstance.minusTotalCount(5);
+            TotalScore.text = "" + Singleton.getInstance.getTotalCount();
+
+            SuccessGetItemDialog.SetActive(true);
+        }
+
         ItemDialogChoiceImg.SetActive(false);
     }
 
     public void OnClick_TimeChoiceDialogClose()
     {
-        timeSelect = true;
+        int total = Singleton.getInstance.getTotalCount();
+
+        if (total < 5)
+        {
+            Debug.Log("코인이 없음");
+            FailGetItemDialog.SetActive(true);
+        }
+
+        else if (total >= 5)
+        {
+            timeSelect = true;
+
+            Singleton.getInstance.minusTotalCount(5);
+            TotalScore.text = "" + Singleton.getInstance.getTotalCount();
+
+            SuccessGetItemDialog.SetActive(true);
+        }
+
         ItemDialogChoiceImg1.SetActive(false);
     }
 
     public void OnClick_shieldChoiceDialogClose()
     {
-        // 아이템 구매 완료 창 만들기
-        shieldSelect = true;
         int total = Singleton.getInstance.getTotalCount();
 
         if (total < 5)
@@ -170,6 +202,8 @@ public class GameManager : MonoBehaviour
 
         else if(total >= 5)
         {
+            shieldSelect = true;
+
             Singleton.getInstance.minusTotalCount(5);
             TotalScore.text = "" + Singleton.getInstance.getTotalCount();
 
