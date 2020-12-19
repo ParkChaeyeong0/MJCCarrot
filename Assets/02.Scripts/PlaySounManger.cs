@@ -6,7 +6,7 @@ public class PlaySounManger : MonoBehaviour
 {
     GameOver gameOver;
 
-    
+
     public GameObject BGMStop;
     public GameObject GameOverSound;
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Skinfunction : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Skinfunction : MonoBehaviour
     public bool Skin0 = true;
     public bool Skin1 = true;
     public bool Skin2 = true;
+
     int rand;
     int randRe;
 
@@ -17,17 +19,22 @@ public class Skinfunction : MonoBehaviour
 
     public GameObject skinLock0, skinLock1, skinLock2;
     public GameObject skinCharacter0, skinCharacter1, skinCharacter2, skinCharacter3, Lock0, Lock1, Lock2;
+    public GameObject SuccessGetItemDialog;
+    public GameObject FailGetItemDialog;
+
+    [SerializeField]
+    private Text TotalScore;
+
+    void Start()
+    {
+        TotalScore.text = "" + Singleton.getInstance.getTotalCount();
+    }
 
     void Update()
     {
         //캐릭터 회전
         transform.Rotate(new Vector3(0, skinRotation * Time.deltaTime, 0));
 
-    }
-
-    public void Test()
-    {
-        Debug.Log("test");
     }
 
     public void OnClick_RandomButton()
@@ -58,18 +65,31 @@ public class Skinfunction : MonoBehaviour
 
 
 
-
-
         switch (rand)
         {
             case 0:
 
-                Skin0 = false;
-                skinLock0.gameObject.SetActive(false);
-                Lock0.SetActive(false);
-                randRe = 0;
-                randNum.Add(0);
-                Debug.Log("0");
+                int total = Singleton.getInstance.getTotalCount();
+
+                if (total < 50)
+                {
+                    Debug.Log("코인이 없음");
+                    FailGetItemDialog.SetActive(true);
+                }
+
+                else if (total >= 50)
+                {
+                    Singleton.getInstance.minusTotalCount(50);
+                    TotalScore.text = "" + Singleton.getInstance.getTotalCount();
+
+                    Skin0 = false;
+                    skinLock0.gameObject.SetActive(false);
+                    Lock0.SetActive(false);
+                    randRe = 0;
+                    randNum.Add(0);
+
+                    SuccessGetItemDialog.SetActive(true);
+                }
 
                 break;
 
@@ -95,6 +115,12 @@ public class Skinfunction : MonoBehaviour
 
                 break;
         }
+    }
+
+    public void OnClick_GetItemDialogClose()
+    {
+        FailGetItemDialog.SetActive(false);
+        SuccessGetItemDialog.SetActive(false);
     }
 
     public void OnClick_OneMore()

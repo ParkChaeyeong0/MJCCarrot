@@ -51,6 +51,7 @@ public class PlayUnityAdsHelper : MonoBehaviour
                     gameOver.gameOverImge.gameObject.SetActive(false);
                     AudioSource BGMSound = gameOver.BGMStop.GetComponent<AudioSource>();
                     BGMSound.Play();
+
                     break;
                 }
             case ShowResult.Skipped:
