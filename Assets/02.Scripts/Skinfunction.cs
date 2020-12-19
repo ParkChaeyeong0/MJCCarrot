@@ -7,9 +7,9 @@ public class Skinfunction : MonoBehaviour
 {
     public List<int> randNum = new List<int>();
 
-    public bool Skin0 = true;
-    public bool Skin1 = true;
-    public bool Skin2 = true;
+    public static bool Skin0 = true, Skin1 = true, Skin2 = true;
+    /*public bool Skin1 = true;
+    public bool Skin2 = true;*/
 
     int rand;
     int randRe;
@@ -21,8 +21,7 @@ public class Skinfunction : MonoBehaviour
 
     public GameObject skinLock0, skinLock1, skinLock2;
     public GameObject skinCharacter0, skinCharacter1, skinCharacter2, skinCharacter3, Lock0, Lock1, Lock2;
-    public GameObject SuccessGetItemDialog;
-    public GameObject FailGetItemDialog;
+    public GameObject SuccessGetItemDialog, FailGetItemDialog, noSkinDialog;
 
     [SerializeField]
     private Text TotalScore;
@@ -30,6 +29,30 @@ public class Skinfunction : MonoBehaviour
     void Start()
     {
         TotalScore.text = "" + Singleton.getInstance.getTotalCount();
+        
+        if (Skin0 == false)
+        {
+            skinLock0.gameObject.SetActive(false);
+            Lock0.SetActive(false);
+            randRe = 0;
+            randNum.Add(0);
+        }
+
+        if (Skin1 == false)
+        {
+            skinLock1.gameObject.SetActive(false);
+            Lock1.SetActive(false);
+            randRe = 1;
+            randNum.Add(1);
+        }
+
+         if (Skin2 == false)
+        {
+            skinLock2.gameObject.SetActive(false);
+            Lock2.SetActive(false);
+            randRe = 2;
+            randNum.Add(2);
+        }
     }
 
     void Update()
@@ -41,11 +64,9 @@ public class Skinfunction : MonoBehaviour
 
     public void OnClick_RandomButton()
     {
-       // int rand = Random.Range(0, 3);
-        Debug.Log(rand);
-
         if (randNum.Count >= 3)
         {
+            noSkinDialog.SetActive(true);
             Debug.Log("스킨 모두획득");
         }
 
@@ -121,6 +142,7 @@ public class Skinfunction : MonoBehaviour
 
     public void OnClick_GetItemDialogClose()
     {
+        noSkinDialog.SetActive(false);
         FailGetItemDialog.SetActive(false);
         SuccessGetItemDialog.SetActive(false);
     }
@@ -130,7 +152,13 @@ public class Skinfunction : MonoBehaviour
         int rand = Random.Range(0, 3);
         Debug.Log(rand);
 
+        if (randNum.Count >= 3)
+        {
+            noSkinDialog.SetActive(true);
+            Debug.Log("스킨 모두획득");
+        }
 
+        //이부분 변경
         if (randNum.Contains(rand))
         {
             for (; ; )
