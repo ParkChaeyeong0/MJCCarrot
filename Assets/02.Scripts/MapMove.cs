@@ -12,13 +12,14 @@ public class MapMove : MonoBehaviour
     void Start()
     {
         tr = GetComponent<Transform>();
-        isOver = GameObject.Find("Player").GetComponent<GameOver>();
+     //   isOver = GameObject.FindGameObjectWithTag("Player").GetComponent<GameOver>();
     }
 
   
     void Update()
     {
-        if (!isOver.isEnter)
+        Debug.Log(GameOver.isEnter);
+        if (!GameOver.isEnter)
         {
             Move();
         }

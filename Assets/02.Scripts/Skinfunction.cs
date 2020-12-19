@@ -14,6 +14,8 @@ public class Skinfunction : MonoBehaviour
     int rand;
     int randRe;
 
+    public static bool selectSkin0= true, selectSkin1 = false, selectSkin2 = false, selectSkin3 = false;
+
     //캐릭터 회전 속도
     private float skinRotation = 50.0f;
 
@@ -203,6 +205,11 @@ public class Skinfunction : MonoBehaviour
         Lock0.SetActive(false);
         Lock1.SetActive(false);
         Lock2.SetActive(false);
+        selectSkin0 = true;
+        selectSkin1 = false;
+        selectSkin2 = false;
+        selectSkin3 = false;
+
     }
 
     public void OnClick_Skin1()
@@ -216,6 +223,11 @@ public class Skinfunction : MonoBehaviour
         Lock0.SetActive(false);
         Lock1.SetActive(false);
         Lock2.SetActive(false);
+
+        selectSkin0 = false;
+        selectSkin1 = true;
+        selectSkin2 = false;
+        selectSkin3 = false;
     }
 
     public void OnClick_Skin2()
@@ -228,6 +240,11 @@ public class Skinfunction : MonoBehaviour
         Lock0.SetActive(false);
         Lock1.SetActive(false);
         Lock2.SetActive(false);
+
+        selectSkin0 = false;
+        selectSkin1 = false;
+        selectSkin2 = true;
+        selectSkin3 = false;
     }
 
     public void OnClick_Skin3()
@@ -240,6 +257,11 @@ public class Skinfunction : MonoBehaviour
         Lock0.SetActive(false);
         Lock1.SetActive(false);
         Lock2.SetActive(false);
+
+        selectSkin0 = false;
+        selectSkin1 = false;
+        selectSkin2 = false;
+        selectSkin3 = true;
     }
 
     public void OnClick_Lock0()
