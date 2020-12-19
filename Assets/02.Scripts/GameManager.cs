@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
     {
         int count = Singleton.getInstance.getCount();
         Singleton.getInstance.sumTotalCount(count);
-
+        GameOver.isEnter = false;
 
         //Restart 버튼 눌렀을 시 스코어 다시 카운트
         Time.timeScale = 1f;
@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
         magnetSelect = false;
         shieldSelect = false;
         timeSelect = false; // 2020.12.12 홈버튼 누르면 아이템 선택안함상태로 초기화
-
+        GameOver.isEnter = false;
         
     }
 
