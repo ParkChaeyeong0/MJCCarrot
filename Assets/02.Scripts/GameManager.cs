@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     public GameObject SuccessGetItemDialog;
     public GameObject FailGetItemDialog;
 
+
+    public GameObject BGMStop;
+    public GameObject GameOverSound;
+
     public GameObject SettingButtonSound;
     public GameObject StartButton;
     public GameObject StartButtonSound;
@@ -253,4 +257,29 @@ public class GameManager : MonoBehaviour
     {
         producerImg.SetActive(false);
     }
+
+    /*private void OnTriggerEnter(Collider col)
+    {
+
+        if (col.tag == "obs")
+        {
+
+            AudioSource BGMSound = BGMStop.GetComponent<AudioSource>();
+            AudioSource GameOver = GameOverSound.GetComponent<AudioSource>();
+
+            GameOver.Play();
+            BGMSound.Stop();
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Coin")
+        {
+            // 효과음
+            AudioSource CoinGetSound = CoinGetSoundEffect.GetComponent<AudioSource>();
+
+            CoinGetSound.Play();
+        }
+    }*/
 }

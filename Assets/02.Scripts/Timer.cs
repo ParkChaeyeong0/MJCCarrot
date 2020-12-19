@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {/*
@@ -13,6 +14,8 @@ public class Timer : MonoBehaviour
 	private bool m_IsPlaying;
 
 	public Text Timer_text;
+
+	public GameObject LockImage;
 
 	// Start is called before the first frame update
 	void Start()
@@ -28,7 +31,7 @@ public class Timer : MonoBehaviour
 		if (m_TotalSeconds <= 0)
 		{
 			SetZero();
-			SceneManager.LoadScene("GameOverScene");
+			LockImage.SetActive(false);
 		}
 
 		if (Timer_text)
@@ -47,7 +50,7 @@ public class Timer : MonoBehaviour
 	}
 	private void SetZero()
 	{
-		m_Timer = @"00:00";
+		m_Timer = @"00";
 		m_TotalSeconds = 0;
 		m_IsPlaying = false;
 	}*/

@@ -16,17 +16,7 @@ public class GameOver : MonoBehaviour
     {
         gameOverImge = GameObject.FindGameObjectWithTag("GameOverView").GetComponent<Image>();
         gameOverImge.gameObject.SetActive(false);
-      //  BGMStop = GameObject.Find("GameManager").GetComponent<GameObject>();
 
-    }
-
-    void Update()
-    {
-        if (isEnter)
-        {
-            AudioSource BGMSound = BGMStop.GetComponent<AudioSource>();
-            BGMSound.Stop();
-        }
     }
 
     // 장애물 닿으면 멈추고 게임오버창
@@ -44,11 +34,11 @@ public class GameOver : MonoBehaviour
                 PlayerPrefs.SetInt("BestScore", count);
             }
 
-          //  AudioSource BGMSound = BGMStop.GetComponent<AudioSource>();
+            AudioSource BGMSound = BGMStop.GetComponent<AudioSource>();
             AudioSource GameOver = GameOverSound.GetComponent<AudioSource>();
 
             GameOver.Play();
-           // BGMSound.Stop();
+            BGMSound.Stop();
         }
     }
 }

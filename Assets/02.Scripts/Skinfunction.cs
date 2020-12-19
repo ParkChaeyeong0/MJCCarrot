@@ -205,6 +205,7 @@ public class Skinfunction : MonoBehaviour
         Lock0.SetActive(false);
         Lock1.SetActive(false);
         Lock2.SetActive(false);
+
         selectSkin0 = true;
         selectSkin1 = false;
         selectSkin2 = false;
