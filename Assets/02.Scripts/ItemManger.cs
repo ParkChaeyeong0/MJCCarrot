@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ItemManger : MonoBehaviour
 {
-    GameManager gameManager;
+
     public Image magnet, shield, slowTime;
     bool magnetSelect = false, shieldSelect = false, timeSelect = false;
 
     void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        if (gameManager.magnetSelect)
+      
+        if (GameManager.magnetSelect)
         {
             this.magnetSelect = true;
             magnet.gameObject.SetActive(false);
@@ -22,7 +22,7 @@ public class ItemManger : MonoBehaviour
             this.magnetSelect = false;
         }
 
-        if (gameManager.shieldSelect)
+        if (GameManager.shieldSelect)
         {
             this.shieldSelect = true;
             shield.gameObject.SetActive(false);
@@ -33,7 +33,7 @@ public class ItemManger : MonoBehaviour
             this.shieldSelect = false;
         }
 
-        if (gameManager.timeSelect)
+        if (GameManager.timeSelect)
         {
             this.timeSelect = true;
             slowTime.gameObject.SetActive(false);
