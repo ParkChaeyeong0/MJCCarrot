@@ -26,10 +26,10 @@ public class GameManager : MonoBehaviour
     public GameObject PlayButtonSound;
     public GameObject SkinButtonSound;
 
-    public bool isEnter = false;
-    public bool magnetSelect = false;
-    public bool timeSelect = false;
-    public bool shieldSelect = false;
+    public static bool isEnter = false;
+    public static bool magnetSelect = false;
+    public static bool timeSelect = false;
+    public static bool shieldSelect = false;
 
     [SerializeField]
     private Text Score;
