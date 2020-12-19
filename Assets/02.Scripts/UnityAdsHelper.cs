@@ -1,16 +1,26 @@
 ﻿using UnityEngine;
 using UnityEngine.Advertisements;
-
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
 public class UnityAdsHelper : MonoBehaviour
 {
     private const string android_game_id = "3933763";
     private const string ios_game_id = "3933762";
 
     private const string rewarded_video_id = "rewardedVideo";
-
+    public Image lockImg;
     void Start()
     {
         Initialize();
+        lockImg.gameObject.SetActive(false);
+    }
+
+
+    IEnumerator AdsCoolTime()
+    {
+        yield return new WaitForSeconds(30f);
+        lockImg.gameObject.SetActive(false);
     }
 
     private void Initialize()
@@ -30,6 +40,10 @@ public class UnityAdsHelper : MonoBehaviour
 
             Advertisement.Show(rewarded_video_id, options);
         }
+
+        lockImg.gameObject.SetActive(true);
+        StartCoroutine(AdsCoolTime());
+
     }
 
     private void HandleShowResult(ShowResult result)
@@ -68,5 +82,13 @@ public class UnityAdsHelper : MonoBehaviour
                     break;
                 }
         }
+
+  
+
+      
     }
+
+    
+
+
 }
