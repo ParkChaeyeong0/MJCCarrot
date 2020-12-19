@@ -9,6 +9,7 @@ public class CoinObsSpwan : MonoBehaviour
     int obsCoinRand;
     public GameObject map;
     GameObject child;
+ 
 
     void Start()
     {
@@ -16,8 +17,8 @@ public class CoinObsSpwan : MonoBehaviour
      
         this.transform.parent = map.transform;
 
-        obsCoinRand = Random.Range(0, obsCoin.Length);
-    
+
+
 
         Spwan();
     }
@@ -25,10 +26,14 @@ public class CoinObsSpwan : MonoBehaviour
     void Update()
     {
        
+
+  
+        
     }
 
-    void Spwan()
+    public void Spwan()
     {
+        obsCoinRand = Random.Range(0, obsCoin.Length);
         switch (obsCoinRand)
         {
             case 0:
@@ -56,7 +61,10 @@ public class CoinObsSpwan : MonoBehaviour
                     child.transform.parent = this.transform;
                     break;
 
-            default: break;
+            default:
+                child = Instantiate(obsCoin[0], transform.position, transform.rotation);
+                child.transform.parent = this.transform;
+                break;
         }
     }
 }

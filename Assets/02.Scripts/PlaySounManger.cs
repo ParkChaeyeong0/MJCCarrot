@@ -12,15 +12,15 @@ public class PlaySounManger : MonoBehaviour
 
     void Start()
     {
-        gameOver = GameObject.Find("Player").GetComponent<GameOver>();
+        gameOver = GameObject.FindGameObjectWithTag("Player").GetComponent<GameOver>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(gameOver.isEnter);
+        Debug.Log(GameOver.isEnter);
 
-        if (gameOver.isEnter)
+        if (GameOver.isEnter)
         {
             AudioSource BGMSound = BGMStop.GetComponent<AudioSource>();
             AudioSource GameOver = GameOverSound.GetComponent<AudioSource>();

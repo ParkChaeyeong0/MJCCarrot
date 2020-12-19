@@ -47,7 +47,7 @@ public class PlayUnityAdsHelper : MonoBehaviour
                     // 광고 시청이 완료되었을 때 처리
                     playCounter.Setting();
              
-                    gameOver.isEnter = false;
+                    GameOver.isEnter = false;
                     gameOver.gameOverImge.gameObject.SetActive(false);
                     AudioSource BGMSound = gameOver.BGMStop.GetComponent<AudioSource>();
                     BGMSound.Play();
