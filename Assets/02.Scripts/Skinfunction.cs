@@ -14,7 +14,7 @@ public class Skinfunction : MonoBehaviour
     int rand;
     int randRe;
 
-    public static bool selectSkin0= true, selectSkin1 = false, selectSkin2 = false, selectSkin3 = false;
+    public static bool selectSkin0 = true, selectSkin1 = false, selectSkin2 = false, selectSkin3 = false;
 
     //캐릭터 회전 속도
     private float skinRotation = 50.0f;
@@ -29,7 +29,7 @@ public class Skinfunction : MonoBehaviour
     void Start()
     {
         TotalScore.text = "" + Singleton.getInstance.getTotalCount();
-        
+
         if (Skin0 == false)
         {
             skinLock0.gameObject.SetActive(false);
@@ -46,7 +46,7 @@ public class Skinfunction : MonoBehaviour
             randNum.Add(1);
         }
 
-         if (Skin2 == false)
+        if (Skin2 == false)
         {
             skinLock2.gameObject.SetActive(false);
             Lock2.SetActive(false);
@@ -62,46 +62,50 @@ public class Skinfunction : MonoBehaviour
 
     }
 
+    /*
+     *  스킨 구매 버튼 이벤트
+     */
     public void OnClick_RandomButton()
     {
-            if (randNum.Count >= 3)
-            {
-                noSkinDialog.SetActive(true);
-                Debug.Log("스킨 모두획득");
-            }
+        int total = Singleton.getInstance.getTotalCount(); // 현재 가지고 있는 코인 갯수
 
-            else
-            {
-                int total = Singleton.getInstance.getTotalCount();
-
-                if (total < 50)
-                {
-                    Debug.Log("코인이 없음");
-                    FailGetItemDialog.SetActive(true);
-                }
-
-                else if (total >= 50)
-                {
-                    Singleton.getInstance.minusTotalCount(50);
-                    TotalScore.text = "" + Singleton.getInstance.getTotalCount();
-                    
-                    for (; ; )
-                    {
-                        if (randNum.Contains(rand))
-                        {
-                            Debug.Log("코인 for문 안의 if문");
-                            rand = Random.Range(0, 3);
-                        }
-
-                        else
-                        {
-                            Debug.Log("코인 for문 안의 else문");
-                            break;
-                        }
-                    }
-                }
+        // 스킨 모두 보유했을 때
+        if (randNum.Count >= 3)
+        {
+            noSkinDialog.SetActive(true);
+            Debug.Log("스킨 모두획득");
+            return;
         }
 
+        // 코인이 없는 경우
+        if (total < 50)
+        {
+            Debug.Log("코인이 없음");
+            FailGetItemDialog.SetActive(true);
+            return;
+        }
+
+        // 코인을 들고 있는 경우
+        if (total >= 50)
+        {
+            Singleton.getInstance.minusTotalCount(50);
+            TotalScore.text = "" + Singleton.getInstance.getTotalCount();
+
+            for (; ; )
+            {
+                if (randNum.Contains(rand))
+                {
+                    Debug.Log("코인 for문 안의 if문");
+                    rand = Random.Range(0, 3);
+                }
+
+                else
+                {
+                    Debug.Log("코인 for문 안의 else문");
+                    break;
+                }
+            }
+        }
 
         switch (rand)
         {
