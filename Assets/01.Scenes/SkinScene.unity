@@ -1851,16 +1851,16 @@ MonoBehaviour:
   skinLock0: {fileID: 1204563173}
   skinLock1: {fileID: 962255714}
   skinLock2: {fileID: 799471419}
-  skinCharacter0: {fileID: 0}
-  skinCharacter1: {fileID: 0}
-  skinCharacter2: {fileID: 0}
-  skinCharacter3: {fileID: 0}
-  Lock0: {fileID: 0}
-  Lock1: {fileID: 0}
-  Lock2: {fileID: 0}
-  SuccessGetItemDialog: {fileID: 0}
-  FailGetItemDialog: {fileID: 0}
-  noSkinDialog: {fileID: 0}
+  skinCharacter0: {fileID: 608635160}
+  skinCharacter1: {fileID: 160357755}
+  skinCharacter2: {fileID: 587536298}
+  skinCharacter3: {fileID: 2011875462}
+  Lock0: {fileID: 1478631764}
+  Lock1: {fileID: 140430822}
+  Lock2: {fileID: 824526730}
+  SuccessGetItemDialog: {fileID: 481472242}
+  FailGetItemDialog: {fileID: 1636849674}
+  noSkinDialog: {fileID: 1685328702}
   TotalScore: {fileID: 0}
 --- !u!4 &608635162 stripped
 Transform:
