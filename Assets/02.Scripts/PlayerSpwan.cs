@@ -22,12 +22,17 @@ public class PlayerSpwan : MonoBehaviour
         if (Skinfunction.selectSkin0)
         {
             Instantiate(playerCharacter[0], transform.position, transform.rotation);
-            if(GameOver.isEnter == true)
+            if(!GameOver.isEnter)
             {
+                AudioSource BGMSound = BGMStop.GetComponent<AudioSource>();
 
-                AudioSource GameOver = GameOverSound.GetComponent<AudioSource>();
+                BGMSound.Play();
+            }
+            else
+            {
+                AudioSource BGMSound = BGMStop.GetComponent<AudioSource>();
 
-                GameOver.Play();
+                BGMSound.Stop();
             }
         }
 
