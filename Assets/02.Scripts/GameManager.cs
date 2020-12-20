@@ -261,28 +261,14 @@ public class GameManager : MonoBehaviour
         producerImg.SetActive(false);
     }
 
-    /*private void OnTriggerEnter(Collider col)
+    public void Sound()
     {
-
-        if (col.tag == "obs")
+        if(GameOver.isEnter == true)
         {
-
+            Debug.Log("GameOver");
             AudioSource BGMSound = BGMStop.GetComponent<AudioSource>();
-            AudioSource GameOver = GameOverSound.GetComponent<AudioSource>();
 
-            GameOver.Play();
             BGMSound.Stop();
         }
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Coin")
-        {
-            // 효과음
-            AudioSource CoinGetSound = CoinGetSoundEffect.GetComponent<AudioSource>();
-
-            CoinGetSound.Play();
-        }
-    }*/
 }

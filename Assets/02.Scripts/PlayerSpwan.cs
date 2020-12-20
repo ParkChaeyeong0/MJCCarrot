@@ -6,7 +6,11 @@ public class PlayerSpwan : MonoBehaviour
 {
     public Transform playerTs;
     public GameObject[] playerCharacter;
-    
+
+
+    public GameObject BGMStop;
+    public GameObject GameOverSound;
+
     void Start()
     {
         PlayerSpwanPoint();
@@ -18,6 +22,13 @@ public class PlayerSpwan : MonoBehaviour
         if (Skinfunction.selectSkin0)
         {
             Instantiate(playerCharacter[0], transform.position, transform.rotation);
+            if(GameOver.isEnter == true)
+            {
+
+                AudioSource GameOver = GameOverSound.GetComponent<AudioSource>();
+
+                GameOver.Play();
+            }
         }
 
         if (Skinfunction.selectSkin1)
