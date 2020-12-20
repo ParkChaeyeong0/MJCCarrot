@@ -33,4 +33,6 @@ public class MapMove : MonoBehaviour
         moveSpeed += Time.fixedDeltaTime;
    
     }
+
+   
 }

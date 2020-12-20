@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Advertisements;
+using System.Collections;
+using System.Collections.Generic;
 
 public class SkinUnityAdsHelper : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class SkinUnityAdsHelper : MonoBehaviour
     {
         Initialize();
     }
+
 
     private void Initialize()
     {
@@ -34,6 +37,8 @@ public class SkinUnityAdsHelper : MonoBehaviour
             Advertisement.Show(rewarded_video_id, options);
         }
     }
+
+  
 
     private void HandleShowResult(ShowResult result)
     {

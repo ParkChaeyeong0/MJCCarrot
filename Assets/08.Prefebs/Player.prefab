@@ -254,8 +254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverImge: {fileID: 0}
-  BGMStop: {fileID: 167067585616406587, guid: c36fa42c756a0db419ea9254af0bed28, type: 3}
   GameOverSound: {fileID: 6906240934194976473}
+  BGMStop: {fileID: 167067585616406587, guid: c36fa42c756a0db419ea9254af0bed28, type: 3}
 --- !u!114 &5987127064421542795
 MonoBehaviour:
   m_ObjectHideFlags: 0

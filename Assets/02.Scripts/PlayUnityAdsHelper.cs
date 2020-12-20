@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Advertisements;
-
+using UnityEngine.UI;
+using System.Collections;
 public class PlayUnityAdsHelper : MonoBehaviour
 {
     private const string android_game_id = "3933763";
@@ -9,10 +10,14 @@ public class PlayUnityAdsHelper : MonoBehaviour
     private const string rewarded_video_id = "rewardedVideo";
     GameOver gameOver;
     PlayCounter playCounter;
+    public Image img;
+    public AudioSource BGMSound;
     void Start()
     {
+       
         Initialize();
-        gameOver = GameObject.Find("Player").GetComponent<GameOver>();
+
+
         playCounter = GameObject.Find("Counter").GetComponent<PlayCounter>();
     }
 
@@ -35,6 +40,12 @@ public class PlayUnityAdsHelper : MonoBehaviour
         }
     }
 
+    IEnumerator MoveCoolTime()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GameOver.isEnter = false;
+    }
+
     private void HandleShowResult(ShowResult result)
     {
         switch (result)
@@ -42,15 +53,22 @@ public class PlayUnityAdsHelper : MonoBehaviour
             case ShowResult.Finished:
                 {
                     Debug.Log("The ad was successfully shown.");
+                    StartCoroutine(MoveCoolTime());
+                    //Debug.Log("광고" + GameOver.isEnter);
 
+                    img.gameObject.SetActive(false);
+
+               
+                   // gameOver.gameOverImge.gameObject.SetActive(false);
+                    
+
+                   // AudioSource BGMSound = gameOver.BGMStop.GetComponent<AudioSource>();
+
+                    BGMSound.Play();
+                    playCounter.Setting();
                     // to do ...
                     // 광고 시청이 완료되었을 때 처리
-                    playCounter.Setting();
-             
-                    GameOver.isEnter = false;
-                    gameOver.gameOverImge.gameObject.SetActive(false);
-                    AudioSource BGMSound = gameOver.BGMStop.GetComponent<AudioSource>();
-                    BGMSound.Play();
+
 
                     break;
                 }
