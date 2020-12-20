@@ -4820,6 +4820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockImg: {fileID: 717713753}
+  TotalScore: {fileID: 1111119937}
 --- !u!4 &1169842224
 Transform:
   m_ObjectHideFlags: 0
