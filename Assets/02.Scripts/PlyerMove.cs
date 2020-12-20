@@ -13,13 +13,13 @@ public class PlyerMove : MonoBehaviour
     GameOver isOver;
     GameManager gameManager;
 
-    public GameObject CoinGetSoundEffect;
+    public AudioSource CoinGetSoundEffect;
 
     void Start()
     {
        // isOver = GameObject.FindGameObjectWithTag("Player").GetComponent<GameOver>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        CoinGetSoundEffect = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<GameObject>();
+        CoinGetSoundEffect = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<AudioSource>();
     }
 
 

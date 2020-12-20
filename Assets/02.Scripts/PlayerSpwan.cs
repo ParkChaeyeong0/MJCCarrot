@@ -16,24 +16,30 @@ public class PlayerSpwan : MonoBehaviour
         PlayerSpwanPoint();
     }
 
+    void Update()
+    {
+       
+    }
    
     void PlayerSpwanPoint()
     {
+        if (!GameOver.isEnter)
+        {
+            AudioSource BGMSound = BGMStop.GetComponent<AudioSource>();
+
+            BGMSound.Play();
+        }
+        else
+        {
+            AudioSource BGMSound = BGMStop.GetComponent<AudioSource>();
+
+            BGMSound.Stop();
+        }
+
         if (Skinfunction.selectSkin0)
         {
             Instantiate(playerCharacter[0], transform.position, transform.rotation);
-            if(!GameOver.isEnter)
-            {
-                AudioSource BGMSound = BGMStop.GetComponent<AudioSource>();
-
-                BGMSound.Play();
-            }
-            else
-            {
-                AudioSource BGMSound = BGMStop.GetComponent<AudioSource>();
-
-                BGMSound.Stop();
-            }
+         
         }
 
         if (Skinfunction.selectSkin1)

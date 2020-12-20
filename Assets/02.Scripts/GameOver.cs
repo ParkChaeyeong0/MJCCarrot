@@ -7,8 +7,9 @@ public class GameOver : MonoBehaviour
 {
     public Image gameOverImge;
 
-    public GameObject BGMStop;
+    //public GameObject BGMStop;
     public GameObject GameOverSound;
+    public AudioSource BGMStop;
 
     public static bool isEnter = false;
     private int count = Singleton.getInstance.getCount();
@@ -17,6 +18,8 @@ public class GameOver : MonoBehaviour
     {
         gameOverImge = GameObject.FindGameObjectWithTag("GameOverView").GetComponent<Image>();
         gameOverImge.gameObject.SetActive(false);
+        BGMStop = GameObject.FindGameObjectWithTag("Manager").GetComponent<AudioSource>();
+
 
     }
 
