@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameOver : MonoBehaviour
 {
     public Image gameOverImge;
+
     public GameObject BGMStop;
     public GameObject GameOverSound;
 
