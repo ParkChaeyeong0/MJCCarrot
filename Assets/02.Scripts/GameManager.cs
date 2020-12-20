@@ -32,14 +32,13 @@ public class GameManager : MonoBehaviour
     public static bool shieldSelect = false;
 
     [SerializeField]
-    private Text Score;
+    public Text Score;
 
     [SerializeField]
-    private Text TotalScore;
+    public Text TotalScore;
 
     [SerializeField]
-    private Text BestScore;
-
+    public Text BestScore;
 
     void Start()
     {

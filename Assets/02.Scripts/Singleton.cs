@@ -46,7 +46,6 @@ public class Singleton
     public void increaseCount()
     {
         count++;
-       
     }
 
     // 인게임 점수 초기화

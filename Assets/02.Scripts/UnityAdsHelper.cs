@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Advertisements;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.UI;
 public class UnityAdsHelper : MonoBehaviour
 {
@@ -10,6 +9,13 @@ public class UnityAdsHelper : MonoBehaviour
 
     private const string rewarded_video_id = "rewardedVideo";
     public Image lockImg;
+
+    [SerializeField]
+    public Text Score;
+
+    public int count;
+    public int totalCount;
+
     void Start()
     {
         Initialize();
@@ -54,31 +60,24 @@ public class UnityAdsHelper : MonoBehaviour
                 {
                     Debug.Log("The ad was successfully shown.");
 
-                    int count = Singleton.getInstance.getCount();
-                    Singleton.getInstance.sumAdCount(count);
+                    totalCount = totalCount + 10;
 
                     Debug.Log("성공");
 
-                    // to do ...
                     // 광고 시청이 완료되었을 때 처리
 
                     break;
                 }
             case ShowResult.Skipped:
                 {
-
                     Debug.Log("스킵");
-                    // to do ...
                     // 광고가 스킵되었을 때 처리
 
                     break;
                 }
             case ShowResult.Failed:
                 {
-
-                    // to do ...
                     // 광고 시청에 실패했을 때 처리
-
                     break;
                 }
         }
