@@ -10,11 +10,14 @@ public class UnityAdsHelper : MonoBehaviour
     private const string rewarded_video_id = "rewardedVideo";
     public Image lockImg;
 
-    [SerializeField]
+    /* [SerializeField]
     public Text Score;
 
+    [SerializeField]
+    private Text TotalScore;
+
     public int count;
-    public int totalCount;
+    public int totalCount; */
 
     void Start()
     {
@@ -59,10 +62,11 @@ public class UnityAdsHelper : MonoBehaviour
             case ShowResult.Finished:
                 {
                     Debug.Log("The ad was successfully shown.");
-
-                    totalCount = totalCount + 10;
-
                     Debug.Log("성공");
+
+                    int count = Singleton.getInstance.getCount();
+                    Singleton.getInstance.sumTotalCount(count + 10);
+                    Singleton.getInstance.saveCoins();
 
                     // 광고 시청이 완료되었을 때 처리
 
