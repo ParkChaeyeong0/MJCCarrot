@@ -158,7 +158,7 @@ public class Skinfunction : MonoBehaviour
 
     public void OnClick_OneMore()
     {
-        //int rand = Random.Range(0, 3);
+   
         Debug.Log(rand);
 
         if (randNum.Count >= 3)
@@ -167,7 +167,7 @@ public class Skinfunction : MonoBehaviour
             Debug.Log("스킨 모두획득");
         }
 
-        //이부분 변경
+      
         else
         {
             for (; ; )
@@ -175,12 +175,12 @@ public class Skinfunction : MonoBehaviour
                 if (randNum.Contains(rand))
                 {
                     rand = Random.Range(0, 3);
-                    Debug.Log("for문 안의 if문");
+                   
                 }
 
                 else
                 {
-                    Debug.Log("for문 안의 else문");
+                  
                     break;
                 }
             }
