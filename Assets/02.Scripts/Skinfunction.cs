@@ -7,9 +7,9 @@ public class Skinfunction : MonoBehaviour
 {
     public List<int> randNum = new List<int>();
 
-    public bool Skin0 = true;
-    public bool Skin1 = true;
-    public bool Skin2 = true;
+    public static bool Skin0 = true, Skin1 = true, Skin2 = true;
+    /*public bool Skin1 = true;
+    public bool Skin2 = true;*/
 
     int rand;
     int randRe;
@@ -21,8 +21,7 @@ public class Skinfunction : MonoBehaviour
 
     public GameObject skinLock0, skinLock1, skinLock2;
     public GameObject skinCharacter0, skinCharacter1, skinCharacter2, skinCharacter3, Lock0, Lock1, Lock2;
-    public GameObject SuccessGetItemDialog;
-    public GameObject FailGetItemDialog;
+    public GameObject SuccessGetItemDialog, FailGetItemDialog, noSkinDialog;
 
     [SerializeField]
     private Text TotalScore;
@@ -30,6 +29,30 @@ public class Skinfunction : MonoBehaviour
     void Start()
     {
         TotalScore.text = "" + Singleton.getInstance.getTotalCount();
+        
+        if (Skin0 == false)
+        {
+            skinLock0.gameObject.SetActive(false);
+            Lock0.SetActive(false);
+            randRe = 0;
+            randNum.Add(0);
+        }
+
+        if (Skin1 == false)
+        {
+            skinLock1.gameObject.SetActive(false);
+            Lock1.SetActive(false);
+            randRe = 1;
+            randNum.Add(1);
+        }
+
+         if (Skin2 == false)
+        {
+            skinLock2.gameObject.SetActive(false);
+            Lock2.SetActive(false);
+            randRe = 2;
+            randNum.Add(2);
+        }
     }
 
     void Update()
@@ -41,36 +64,14 @@ public class Skinfunction : MonoBehaviour
 
     public void OnClick_RandomButton()
     {
-       // int rand = Random.Range(0, 3);
-        Debug.Log(rand);
-
-        if (randNum.Count >= 3)
-        {
-            Debug.Log("스킨 모두획득");
-        }
-
-        else
-        {
-            for (; ; )
+            if (randNum.Count >= 3)
             {
-                if (randNum.Contains(rand))
-                {
-                    rand = Random.Range(0, 3);
-                }
-
-                else
-                {
-                    break;
-                }
+                noSkinDialog.SetActive(true);
+                Debug.Log("스킨 모두획득");
             }
-        }
 
-
-
-        switch (rand)
-        {
-            case 0:
-
+            else
+            {
                 int total = Singleton.getInstance.getTotalCount();
 
                 if (total < 50)
@@ -83,15 +84,36 @@ public class Skinfunction : MonoBehaviour
                 {
                     Singleton.getInstance.minusTotalCount(50);
                     TotalScore.text = "" + Singleton.getInstance.getTotalCount();
+                    
+                    for (; ; )
+                    {
+                        if (randNum.Contains(rand))
+                        {
+                            Debug.Log("코인 for문 안의 if문");
+                            rand = Random.Range(0, 3);
+                        }
 
-                    Skin0 = false;
-                    skinLock0.gameObject.SetActive(false);
-                    Lock0.SetActive(false);
-                    randRe = 0;
-                    randNum.Add(0);
-
-                    SuccessGetItemDialog.SetActive(true);
+                        else
+                        {
+                            Debug.Log("코인 for문 안의 else문");
+                            break;
+                        }
+                    }
                 }
+        }
+
+
+        switch (rand)
+        {
+            case 0:
+
+                Skin0 = false;
+                skinLock0.gameObject.SetActive(false);
+                Lock0.SetActive(false);
+                randRe = 0;
+                randNum.Add(0);
+
+                SuccessGetItemDialog.SetActive(true);
 
                 break;
 
@@ -104,6 +126,8 @@ public class Skinfunction : MonoBehaviour
                 randNum.Add(1);
                 Debug.Log("1");
 
+                SuccessGetItemDialog.SetActive(true);
+
                 break;
 
             case 2:
@@ -115,40 +139,44 @@ public class Skinfunction : MonoBehaviour
                 randNum.Add(2);
                 Debug.Log("2");
 
+                SuccessGetItemDialog.SetActive(true);
+
                 break;
         }
     }
 
     public void OnClick_GetItemDialogClose()
     {
+        noSkinDialog.SetActive(false);
         FailGetItemDialog.SetActive(false);
         SuccessGetItemDialog.SetActive(false);
     }
 
     public void OnClick_OneMore()
     {
-        int rand = Random.Range(0, 3);
+        //int rand = Random.Range(0, 3);
         Debug.Log(rand);
 
+        if (randNum.Count >= 3)
+        {
+            noSkinDialog.SetActive(true);
+            Debug.Log("스킨 모두획득");
+        }
 
-        if (randNum.Contains(rand))
+        //이부분 변경
+        else
         {
             for (; ; )
             {
-                rand = Random.Range(0, 3);
-                //if (randNum.Contains(rand) == false)
-                //{
-                //    continue;
-                //}
-
-                if (!randNum.Contains(rand))
+                if (randNum.Contains(rand))
                 {
-                    Debug.Log("중복");
-                    break;
+                    rand = Random.Range(0, 3);
+                    Debug.Log("for문 안의 if문");
                 }
 
-                if (randNum.Count > 3)
+                else
                 {
+                    Debug.Log("for문 안의 else문");
                     break;
                 }
             }
@@ -166,6 +194,8 @@ public class Skinfunction : MonoBehaviour
                 randNum.Add(0);
                 Debug.Log("0");
 
+                SuccessGetItemDialog.SetActive(true);
+
                 break;
 
             case 1:
@@ -177,6 +207,8 @@ public class Skinfunction : MonoBehaviour
                 randNum.Add(1);
                 Debug.Log("1");
 
+                SuccessGetItemDialog.SetActive(true);
+
                 break;
 
             case 2:
@@ -187,6 +219,8 @@ public class Skinfunction : MonoBehaviour
                 randRe = 2;
                 randNum.Add(2);
                 Debug.Log("2");
+
+                SuccessGetItemDialog.SetActive(true);
 
                 break;
         }

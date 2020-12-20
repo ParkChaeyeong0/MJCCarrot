@@ -22,17 +22,16 @@ public class PlyerMove : MonoBehaviour
         CoinGetSoundEffect = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<GameObject>();
     }
 
+
     void Update()
     {
         if (!GameOver.isEnter)
         {
-            move();
+            move();                                                                                                                                                                                                                                           
         }
-
-
-        
-
     }
+
+
     void move()
     {
         if (Input.touchCount == 1)
@@ -53,6 +52,7 @@ public class PlyerMove : MonoBehaviour
             }
         } //플레이어 x축 드래그터치 이동
     }
+
 
      void OnTriggerEnter(Collider other)
     {
