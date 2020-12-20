@@ -200,6 +200,7 @@ public class Skinfunction : MonoBehaviour
         {
             noSkinDialog.SetActive(true);
             Debug.Log("스킨 모두획득");
+            return;
         }
 
       

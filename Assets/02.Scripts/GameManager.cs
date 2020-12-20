@@ -90,6 +90,12 @@ public class GameManager : MonoBehaviour
         int count = Singleton.getInstance.getCount();
         Singleton.getInstance.sumTotalCount(count);
         Singleton.getInstance.saveCoins(); // 현재 코인 저장
+
+        if (count > PlayerPrefs.GetInt("BestScore", 0))
+        {
+            PlayerPrefs.SetInt("BestScore", count);
+        }
+
         GameOver.isEnter = false;
 
         //Restart 버튼 눌렀을 시 스코어 다시 카운트
@@ -108,6 +114,11 @@ public class GameManager : MonoBehaviour
         int count = Singleton.getInstance.getCount();
         Singleton.getInstance.sumTotalCount(count);
         Singleton.getInstance.saveCoins(); // 현재 코인 저장
+
+        if (count > PlayerPrefs.GetInt("BestScore", 0))
+        {
+            PlayerPrefs.SetInt("BestScore", count);
+        }
 
         AudioSource HomeButtonSound = StartButtonSound.GetComponent<AudioSource>();
         HomeButtonSound.Play();

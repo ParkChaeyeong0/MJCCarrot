@@ -51,7 +51,7 @@ public class UseItem : MonoBehaviour
     
     IEnumerator SpeedDownCooltime()
     {
-        yield return new WaitForSeconds(60f);
+        yield return new WaitForSeconds(10f);
         speed.gameObject.SetActive(false);
       
     }
@@ -59,14 +59,14 @@ public class UseItem : MonoBehaviour
 
     IEnumerator ShieldCooltime()
     {
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(10f);
         shield.gameObject.SetActive(false);
 
     }
 
     IEnumerator MagnetCooltime()
     {
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(10f);
         magnet.gameObject.SetActive(false);
 
     }
