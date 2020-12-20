@@ -193,7 +193,7 @@ public class Skinfunction : MonoBehaviour
     public void OnClick_OneMore()
     {
    
-        Debug.Log(rand);
+       // Debug.Log(rand);
 
         if (randNum.Count >= 3)
         {

@@ -48,7 +48,7 @@ public class SkinUnityAdsHelper : MonoBehaviour
 
                     isSkinfunction = GameObject.Find("Skin0").GetComponent<Skinfunction>();
                     isSkinfunction.OnClick_OneMore();
-
+                    Debug.Log(isSkinfunction.randNum);
                     break;
                 }
             case ShowResult.Skipped:
