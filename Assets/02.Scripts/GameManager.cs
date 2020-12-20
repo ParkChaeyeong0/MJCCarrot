@@ -167,6 +167,7 @@ public class GameManager : MonoBehaviour
 
             Singleton.getInstance.minusTotalCount(5);
             TotalScore.text = "" + Singleton.getInstance.getTotalCount();
+            Singleton.getInstance.saveCoins();
 
             SuccessGetItemDialog.SetActive(true);
         }
@@ -190,6 +191,7 @@ public class GameManager : MonoBehaviour
 
             Singleton.getInstance.minusTotalCount(5);
             TotalScore.text = "" + Singleton.getInstance.getTotalCount();
+            Singleton.getInstance.saveCoins();
 
             SuccessGetItemDialog.SetActive(true);
         }
@@ -213,6 +215,7 @@ public class GameManager : MonoBehaviour
 
             Singleton.getInstance.minusTotalCount(5);
             TotalScore.text = "" + Singleton.getInstance.getTotalCount();
+            Singleton.getInstance.saveCoins();
 
             SuccessGetItemDialog.SetActive(true);
         }
