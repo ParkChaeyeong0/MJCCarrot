@@ -4819,11 +4819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac21684fa78c6146bbb7ae3f9842d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  lockImg: {fileID: 717713753}
-=======
   lockImg: {fileID: 0}
->>>>>>> b246f7e785ced0f3c4f8bbcb4fb8c716ccfd57f5
 --- !u!4 &1169842224
 Transform:
   m_ObjectHideFlags: 0
