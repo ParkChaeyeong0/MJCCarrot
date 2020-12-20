@@ -43,7 +43,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        TotalScore.text = "" + Singleton.getInstance.getTotalCount();
+        Singleton.getInstance.setTotalCount(PlayerPrefs.GetInt("COIN", 0));
+        TotalScore.text = "" + PlayerPrefs.GetInt("COIN", Singleton.getInstance.getTotalCount());
         BestScore.text = "Best Score : " + PlayerPrefs.GetInt("BestScore", 0).ToString();
     }
 
@@ -89,9 +90,11 @@ public class GameManager : MonoBehaviour
     {
         int count = Singleton.getInstance.getCount();
         Singleton.getInstance.sumTotalCount(count);
+        Singleton.getInstance.saveCoins(); // 현재 코인 저장
         GameOver.isEnter = false;
 
         //Restart 버튼 눌렀을 시 스코어 다시 카운트
+        Singleton.getInstance.initCount();
         Time.timeScale = 1f;
 
         AudioSource RyPlayButtonSound = PlayButtonSound.GetComponent<AudioSource>();
@@ -105,6 +108,7 @@ public class GameManager : MonoBehaviour
     {
         int count = Singleton.getInstance.getCount();
         Singleton.getInstance.sumTotalCount(count);
+        Singleton.getInstance.saveCoins(); // 현재 코인 저장
 
         AudioSource HomeButtonSound = StartButtonSound.GetComponent<AudioSource>();
         HomeButtonSound.Play();

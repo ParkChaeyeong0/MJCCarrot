@@ -7,7 +7,7 @@ public class Skinfunction : MonoBehaviour
 {
     public List<int> randNum = new List<int>();
 
-    public static bool Skin0 = true, Skin1 = true, Skin2 = true;
+    public bool Skin0, Skin1, Skin2;
     /*public bool Skin1 = true;
     public bool Skin2 = true;*/
 
@@ -28,6 +28,7 @@ public class Skinfunction : MonoBehaviour
 
     void Start()
     {
+        init();
         TotalScore.text = "" + Singleton.getInstance.getTotalCount();
 
         if (Skin0 == false)
@@ -60,6 +61,36 @@ public class Skinfunction : MonoBehaviour
         //캐릭터 회전
         transform.Rotate(new Vector3(0, skinRotation * Time.deltaTime, 0));
 
+    }
+
+    void init()
+    {
+        Skin0 = true;
+        Skin1 = true;
+        Skin2 = true;
+
+        if(PlayerPrefs.GetInt("SKIN0", 0) == 0 && PlayerPrefs.GetInt("SKIN1", 0) == 0 && PlayerPrefs.GetInt("SKIN2", 0) == 0)
+        {
+            return;
+        }
+
+        if(PlayerPrefs.GetInt("SKIN0", 0) == 1)
+        {
+            Skin0 = false;
+            randNum.Add(0);
+        }
+
+        if (PlayerPrefs.GetInt("SKIN1", 0) == 1)
+        {
+            Skin1 = false;
+            randNum.Add(1);
+        }
+
+        if (PlayerPrefs.GetInt("SKIN2", 0) == 1)
+        {
+            Skin2 = false;
+            randNum.Add(2);
+        }
     }
 
     /*
@@ -112,6 +143,7 @@ public class Skinfunction : MonoBehaviour
             case 0:
 
                 Skin0 = false;
+                PlayerPrefs.SetInt("SKIN0", 1);
                 skinLock0.gameObject.SetActive(false);
                 Lock0.SetActive(false);
                 randRe = 0;
@@ -124,6 +156,7 @@ public class Skinfunction : MonoBehaviour
             case 1:
 
                 Skin1 = false;
+                PlayerPrefs.SetInt("SKIN1", 1);
                 skinLock1.gameObject.SetActive(false);
                 Lock1.SetActive(false);
                 randRe = 1;
@@ -137,6 +170,7 @@ public class Skinfunction : MonoBehaviour
             case 2:
 
                 Skin2 = false;
+                PlayerPrefs.SetInt("SKIN2", 1);
                 skinLock2.gameObject.SetActive(false);
                 Lock2.SetActive(false);
                 randRe = 2;
@@ -192,6 +226,7 @@ public class Skinfunction : MonoBehaviour
             case 0:
 
                 Skin0 = false;
+                PlayerPrefs.SetInt("SKIN0", 1);
                 skinLock0.gameObject.SetActive(false);
                 Lock0.SetActive(false);
                 randRe = 0;
@@ -205,6 +240,7 @@ public class Skinfunction : MonoBehaviour
             case 1:
 
                 Skin1 = false;
+                PlayerPrefs.SetInt("SKIN1", 1);
                 skinLock1.gameObject.SetActive(false);
                 Lock1.SetActive(false);
                 randRe = 1;
@@ -218,6 +254,7 @@ public class Skinfunction : MonoBehaviour
             case 2:
 
                 Skin2 = false;
+                PlayerPrefs.SetInt("SKIN2", 1);
                 skinLock2.gameObject.SetActive(false);
                 Lock2.SetActive(false);
                 randRe = 2;

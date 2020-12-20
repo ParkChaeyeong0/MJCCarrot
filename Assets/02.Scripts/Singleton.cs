@@ -60,6 +60,11 @@ public class Singleton
         return totalCount;
     }
 
+    public void setTotalCount(int count)
+    {
+        totalCount = count;
+    }
+
     // 메인화면 총 점수 + 인게임 점수
     public void sumTotalCount(int count)
     {
@@ -75,6 +80,11 @@ public class Singleton
     public void sumAdCount(int Ad = 10)
     {
         totalCount = totalCount + Ad;
+    }
+
+    public void saveCoins()
+    {
+        PlayerPrefs.SetInt("COIN", totalCount);
     }
 }
 
