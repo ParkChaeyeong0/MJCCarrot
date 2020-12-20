@@ -121,6 +121,7 @@ public class Skinfunction : MonoBehaviour
         {
             Singleton.getInstance.minusTotalCount(50);
             TotalScore.text = "" + Singleton.getInstance.getTotalCount();
+            Singleton.getInstance.saveCoins();
 
             for (; ; )
             {
