@@ -880,6 +880,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67d1d48f7ea469743a68a8abdf26d518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  img: {fileID: 800797237}
+  BGMSound: {fileID: 848114764}
 --- !u!4 &358905207
 Transform:
   m_ObjectHideFlags: 0
@@ -2296,6 +2298,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834aa2c224db0e9448b2789b97e4f6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &848114764 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 167067585616406588, guid: c36fa42c756a0db419ea9254af0bed28,
+    type: 3}
+  m_PrefabInstance: {fileID: 167067584786127985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &848114766 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 167067585616406591, guid: c36fa42c756a0db419ea9254af0bed28,
